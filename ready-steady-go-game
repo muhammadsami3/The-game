@@ -1,0 +1,20 @@
+function  ReadyGo
+(color) {
+	var img1=document.getElementById('1').src="img/gray.png";
+	var img1=document.getElementById('2').src="img/gray.png";
+	var img1=document.getElementById('3').src="img/gray.png";
+if (color===1)
+{
+	var img1=document.getElementById('1').src="img/green.png";	
+}
+if (color===2)
+{
+	var img1=document.getElementById('2').src="img/orange.png";	
+}
+if (color===3)
+{
+	var img1=document.getElementById('3').src="img/red.png";
+}
+	
+}
+ReadyGo(4);
