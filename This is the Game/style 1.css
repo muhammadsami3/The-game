@@ -11,26 +11,35 @@ body {
     width: 100%;
 }
 table{
-    
-   
-    height: 100% ;
-    width: 100%;
+    position: relative;
+    height: 200px ;
+    width: 200px;
     margin-left: 0px;
     margin-right:0px; 
-      text-align:center; 
+    padding-right: 650px;
+    align-self: center;
+    border-spacing: 0px;
 }
 tr{
-    padding: 0px; margin: 0px;
-
+    /* padding: 0px; margin: 0px; */
+text-align:center; 
+    vertical-align:center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
 }
  td
 {
-    padding: 0px; margin: 0px;
-    text-align:center; 
+      
+    padding: 0px; margin:0px;
+    /* text-align:center;  */
+    vertical-align:center;
     align-content: center;
     align-items: center;
-    width:100%;
-    height: 100%; 
+    align-self: center;
+    
+    width:200px;
+    height: 200px; 
 } 
 .imgs{
 
@@ -61,15 +70,15 @@ button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-img{
+ img{
     display: block;
-    height: 120px;
-    width:335px;
+    height: 200px;
+    width: 200px;
    
-}
-/* #div1_2{
-
-} */
+} 
+ div{
+ align-self: center;
+    } 
 #exit{
 
  text-align:left; 
