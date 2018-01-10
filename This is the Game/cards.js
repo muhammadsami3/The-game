@@ -25,3 +25,10 @@ function ch_img(obj,src)
 var c1=new cards('img1',false,'green.png',false);
 var img_img1=document.getElementById('img1');
 img_img1.addEventListener('click',ch_img(c1,'red.png'));
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
