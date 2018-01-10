@@ -1,0 +1,7 @@
+1.Opening and End pages    -> noha
+2.css design             ->   sami
+3.how to rotate pic with animation -> rouen
+4.search for local storage -> youns
+5.how to increase points     -> yahia
+6.create objects of each pic what is the methods and variables required  -> youns
+7.
