@@ -1,4 +1,9 @@
-
+var viewed=0;
+var current_source="";
+var current_id="";
+var points=0;
+var points_par=document.getElementById("point");
+points_par.innerText=points;
 
 var img_arr=['imgs/pic1.jpg','imgs/pic2.png','imgs/pic3.jpg','imgs/pic4.png','imgs/pic5.jpg','imgs/pic6.png','imgs/pic7.jpg','imgs/pic8.png','imgs/pic1.jpg','imgs/pic2.png','imgs/pic3.jpg','imgs/pic4.png','imgs/pic5.jpg','imgs/pic6.png','imgs/pic7.jpg','imgs/pic8.png'];
 function shuffleArray(img_arr) {
@@ -30,7 +35,52 @@ function ch_img(obj,src)
 {
     return function()
     {
-        obj.set_img(src);
+        if(viewed<2)
+        {
+            obj.set_img(src);
+            viewed++;
+            if(viewed == 1)
+            {
+                current_source=src;
+                current_id=obj.id;
+            }
+            if(viewed == 2)
+            {
+                var delay_fun=function()
+                {
+                if(current_source==src)
+                {
+                    var first_elem=document.getElementById(current_id)
+                    first_elem.setAttribute('src','imgs/trans.png')
+                   
+                    var second_elem=document.getElementById(obj.id)
+                    second_elem.setAttribute('src','imgs/trans.png')
+
+                    points+=6;
+                    points_par.innerText=points;
+
+                }else{
+                    var first_elem=document.getElementById(current_id)
+                    first_elem.setAttribute('src','green.png')
+                   
+                    var second_elem=document.getElementById(obj.id)
+                    second_elem.setAttribute('src','green.png')
+
+                    points-=2;
+                    points_par.innerText=points;
+
+                }
+
+                viewed=0;
+                current_source="";
+                current_id="";
+                }
+                setTimeout(delay_fun,1000);
+            }
+
+
+        }
+        
     }
 }
 var c1=new cards('img1',false,'green.png',false);
