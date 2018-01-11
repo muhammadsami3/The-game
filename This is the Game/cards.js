@@ -1,7 +1,7 @@
-var previous_obj;
+var first_obj;
 var viewed = 0;
-var current_source = "";
-var current_id = "";
+var first_src = "";
+var first_id = "";
 var points = 0;
 var points_par = document.getElementById("point");
 points_par.innerText = points;
@@ -33,29 +33,27 @@ class cards {
 function ch_img(obj, src, index) {
     return function () {
         if (!obj.correct) {
-            if (obj.id != current_id) {
+            if (obj.id != first_id) {
                 if (viewed < 2) {
                     obj.set_img(src);
                     viewed++;
                     if (viewed == 1) {
-                        current_source = src;
-                        current_id = obj.id;
-                        previous_obj = obj
+                        first_src = src;
+                        first_id = obj.id;
+                        first_obj = obj
                     }
                     if (viewed == 2) {
                         var delay_fun = function () {
-                            if (current_source == src) {
-                                var first_elem = document.getElementById(current_id)
-                                first_elem.setAttribute('src', 'imgs/trans.png')
-                                previous_obj.correct=true;
+                            if (first_src == src) {
+                                var first_elem = document.getElementById(first_id)
+                                first_obj.correct=true;
                                 var second_elem = document.getElementById(obj.id)
-                                second_elem.setAttribute('src', 'imgs/trans.png')
                                 obj.correct = true;
                                 points += 6;
                                 points_par.innerText = points;
 
                             } else {
-                                var first_elem = document.getElementById(current_id)
+                                var first_elem = document.getElementById(first_id)
                                 first_elem.setAttribute('src', 'green.png')
 
                                 var second_elem = document.getElementById(obj.id)
@@ -67,8 +65,8 @@ function ch_img(obj, src, index) {
                             }
 
                             viewed = 0;
-                            current_source = "";
-                            current_id = "";
+                            first_src = "";
+                            first_id = "";
                         }
                         setTimeout(delay_fun, 1000);
                     }
