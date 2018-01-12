@@ -3,6 +3,7 @@ var viewed = 0;
 var first_src = "";
 var first_id = "";
 var points = 0;
+var how_many_checked=0;
 var points_par = document.getElementById("point");
 points_par.innerText = points;
 
@@ -45,6 +46,7 @@ function ch_img(obj, src, index) {
                                 first_obj.correct=true;
                                 var second_elem = document.getElementById(obj.id)
                                 obj.correct = true;
+                                how_many_checked+=2;
                                 points += 5;
                                 points_par.innerText = points;
 
@@ -95,6 +97,21 @@ var obj_arr = {obj1 : c1,obj2 : c2,obj3 : c3,obj4 : c4,obj5 : c5,obj6 : c6,obj7 
 var img_img1 = document.getElementsByTagName('img');
 var i=0
 var obj;
+for(obj in obj_arr)
+{
+    obj_arr[obj].set_img(img_arr[i]);
+    i++;
+}
+function init_cards()
+{
+    var obj1;
+    for(obj1 in obj_arr)
+    {
+        obj_arr[obj1].set_img("green.png");
+    }  
+}
+setTimeout(init_cards,1500);
+i=0;
 for(obj in obj_arr)
 {
     console.log(obj_arr[obj])
