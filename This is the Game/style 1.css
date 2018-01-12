@@ -1,6 +1,5 @@
 body {
     background-color :black;
-    background-image:url("");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,24 +19,59 @@ table{
     align-self: center;
     border-spacing: 0px;
 }
+
 tr{
     /* padding: 0px; margin: 0px; */
-text-align:center; 
+    text-align:center; 
     vertical-align:center;
     align-content: center;
     align-items: center;
     align-self: center;
 }
- td
-{
-      
+#1-1{
+    -webkit-transition: transform 300ms;
+     backface-visibility: hidden;
+     padding: 0px; margin:0px;
+    /* text-align:center;  */
+    vertical-align:center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    position: absolute;
+    
+    width:200px;
+    height: 200px;
+    
+    
+}
+#1-2{
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+    position: absolute;
     padding: 0px; margin:0px;
     /* text-align:center;  */
     vertical-align:center;
     align-content: center;
     align-items: center;
     align-self: center;
-    
+    width:200px;
+    height: 200px;
+     
+}
+td:hover
+{ 
+    transform: rotateY(180deg);
+}
+ .data
+{  
+    transform-style: preserve-3d;
+    cursor: pointer;
+    padding: 0px; margin:0px;
+    /* text-align:center;  */
+    vertical-align:center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
     width:200px;
     height: 200px; 
 } 
@@ -52,7 +86,7 @@ font {
 }
 button
 {
-padding: 15px 25px;
+  padding: 15px 25px;
   font-size: 29px;
   text-align: center;
   cursor: pointer;
@@ -76,9 +110,10 @@ button:active {
     width: 200px;
    
 } 
- div{
+div
+{
  align-self: center;
-    } 
+ } 
 #exit{
 
  text-align:left; 
