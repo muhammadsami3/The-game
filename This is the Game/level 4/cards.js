@@ -52,9 +52,9 @@ function ch_img(obj, src, index) {
                                 if(how_many_checked==img_arr.length)
                                 {
                                     document.getElementById("score").innerHTML=points
-                                    document.getElementById("tid").setAttribute('style',"display:none")
+                                    document.getElementById("tableImg").setAttribute('style',"display:none")
                                     document.getElementById("img_comp").setAttribute('style',"display:all")
-                                    document.getElementById("enddiv").setAttribute('style',"display:all;background-color: black")
+                                    document.getElementById("enddiv").setAttribute('style',"display:all")
                                 }
                                 
 
