@@ -3,7 +3,7 @@ var viewed = 0;
 var first_src = "";
 var first_id = "";
 var points = 0;
-var how_many_checked=0;
+var how_many_checked = 0;
 var points_par = document.getElementById("point");
 points_par.innerText = points;
 
@@ -13,7 +13,7 @@ function shuffleArray(img_arr) {
         [img_arr[i], img_arr[j]] = [img_arr[j], img_arr[i]];
     }
 }
-var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg',  'imgs/pic10.jpg'];
+var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
 shuffleArray(img_arr);
 class cards {
     constructor(id, check, correct) {
@@ -43,18 +43,15 @@ function ch_img(obj, src, index) {
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
-                                first_obj.correct=true;
+                                first_obj.correct = true;
                                 var second_elem = document.getElementById(obj.id)
                                 obj.correct = true;
-                                how_many_checked+=2;
+                                how_many_checked += 2;
                                 points += 5;
                                 points_par.innerText = points;
-                                if(how_many_checked==img_arr.length)
-                                {
-                                    document.getElementById("score").innerHTML=points
-                                    document.getElementById("tid").setAttribute('style',"display:none")
-                                    document.getElementById("img_comp").setAttribute('style',"display:all")
-                                    document.getElementById("enddiv").setAttribute('style',"display:all;background-color: black")
+                                //local storage
+                                if (localStorage.getItem("max_points") < points) {
+                                    localStorage.setItem("max_points", points)
                                 }
 
                             } else {
@@ -88,27 +85,24 @@ var c1 = new cards('img1', false, false);
 var c2 = new cards('img2', false, false);
 var c3 = new cards('img3', false, false);
 var c4 = new cards('img4', false, false);
-var obj_arr = {obj1 : c1,obj2 : c2,obj3 : c3,obj4 : c4}
+var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
 var img_img1 = document.getElementsByTagName('img');
-var i=0
+var i = 0
 var obj;
-for(obj in obj_arr)
-{
+for (obj in obj_arr) {
     obj_arr[obj].set_img(img_arr[i]);
     i++;
 }
-function init_cards()
-{
+function init_cards() {
     var obj1;
-    for(obj1 in obj_arr)
-    {
+    for (obj1 in obj_arr) {
         obj_arr[obj1].set_img("green.png");
-    }  
+    }
 }
-setTimeout(init_cards,1500);
-i=0;
-for(obj in obj_arr)
-{
+setTimeout(init_cards, 1500);
+i = 0;
+for (obj in obj_arr) {
     img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i));
     i++
 }
+
