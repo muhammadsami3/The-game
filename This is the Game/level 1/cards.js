@@ -50,8 +50,10 @@ function ch_img(obj, src, index) {
                                 points += 5;
                                 points_par.innerText = points;
                                 //local storage
-                                if (localStorage.getItem("max_points") < points) {
+                                if (localStorage.getItem("max_points") < points) 
+                                    {
                                     localStorage.setItem("max_points", points)
+                                    }
                                 if(how_many_checked==img_arr.length)
                                 {
                                     document.getElementById("score").innerHTML=points
@@ -107,8 +109,8 @@ function init_cards() {
 }
 setTimeout(init_cards, 1500);
 i = 0;
-for (obj in obj_arr) {
+for (obj in obj_arr) 
+    {
     img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i));
     i++
-}
-
+    }
