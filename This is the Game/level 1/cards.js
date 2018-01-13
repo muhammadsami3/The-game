@@ -52,6 +52,12 @@ function ch_img(obj, src, index) {
                                 //local storage
                                 if (localStorage.getItem("max_points") < points) {
                                     localStorage.setItem("max_points", points)
+                                if(how_many_checked==img_arr.length)
+                                {
+                                    document.getElementById("score").innerHTML=points
+                                    document.getElementById("tableImg").setAttribute('style',"display:none")
+                                    document.getElementById("img_comp").setAttribute('style',"display:all")
+                                    document.getElementById("enddiv").setAttribute('style',"display:all")
                                 }
 
                             } else {
