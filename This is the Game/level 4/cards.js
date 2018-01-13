@@ -49,6 +49,14 @@ function ch_img(obj, src, index) {
                                 how_many_checked+=2;
                                 points += 5;
                                 points_par.innerText = points;
+                                if(how_many_checked==img_arr.length)
+                                {
+                                    document.getElementById("score").innerHTML=points
+                                    document.getElementById("tid").setAttribute('style',"display:none")
+                                    document.getElementById("img_comp").setAttribute('style',"display:all")
+                                    document.getElementById("enddiv").setAttribute('style',"display:all;background-color: black")
+                                }
+                                
 
                             } else {
                                 var first_elem = document.getElementById(first_id)
