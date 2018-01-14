@@ -71,7 +71,9 @@ function ch_img(obj, src, index) {
                                     document.getElementById("img_comp").setAttribute('style',"display:all");
                                     document.getElementById("enddiv").setAttribute('style',"display:all");
                                     document.getElementById("achive").setAttribute('style', "display:all");
+                                    document.getElementById("bestscoreDiv").setAttribute('style', "display:all");
                                     
+                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points")
                                     if (perfect_pag)
                                     {
                                         document.getElementById("perfect").setAttribute('style', "display:all");
