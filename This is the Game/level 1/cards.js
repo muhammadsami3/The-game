@@ -4,6 +4,7 @@ var first_src = "";
 var first_id = "";
 var points = 0;
 var how_many_checked = 0;
+var perfect_pag=true;
 var points_par = document.getElementById("point");
 points_par.innerText = points;
 
@@ -29,17 +30,24 @@ class cards {
 }
 function ch_img(obj, src, index) {
     return function () {
+        //if card is not correct
         if (!obj.correct) {
+            //if it's not the same card
             if (obj.id != first_id) {
+                //if the shown less than 2 card
                 if (viewed < 2) {
+
                     obj.set_img(src);
                     viewed++;
+                    //first card shown just save it
                     if (viewed == 1) {
                         first_src = src;
                         first_id = obj.id;
                         first_obj = obj
                     }
+                     //if it's the second card shown
                     if (viewed == 2) {
+
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
@@ -54,12 +62,20 @@ function ch_img(obj, src, index) {
                                     {
                                     localStorage.setItem("max_points", points)
                                     }
+
+                                    //level complete
                                 if(how_many_checked==img_arr.length)
                                 {
                                     document.getElementById("score").innerHTML=points
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
-                                    document.getElementById("img_comp").setAttribute('style',"display:all")
-                                    document.getElementById("enddiv").setAttribute('style',"display:all")
+                                    document.getElementById("img_comp").setAttribute('style',"display:all");
+                                    document.getElementById("enddiv").setAttribute('style',"display:all");
+                                    document.getElementById("achive").setAttribute('style', "display:all");
+                                    
+                                    if (perfect_pag)
+                                    {
+                                        document.getElementById("perfect").setAttribute('style', "display:all");
+                                    }
                                 }
 
                             } else {
@@ -71,6 +87,7 @@ function ch_img(obj, src, index) {
 
                                 points -= 2;
                                 points_par.innerText = points;
+                                perfect_pag=false;
 
                             }
 
@@ -89,18 +106,22 @@ function ch_img(obj, src, index) {
     }
 }
 //function declartion ()
+//creating objects
 var c1 = new cards('img1', false, false);
 var c2 = new cards('img2', false, false);
 var c3 = new cards('img3', false, false);
 var c4 = new cards('img4', false, false);
+//adding then to array
 var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
 var img_img1 = document.getElementsByTagName('img');
 var i = 0
 var obj;
+//showing cards
 for (obj in obj_arr) {
     obj_arr[obj].set_img(img_arr[i]);
     i++;
 }
+//closing cards 
 function init_cards() {
     var obj1;
     for (obj1 in obj_arr) {
@@ -108,6 +129,7 @@ function init_cards() {
     }
 }
 setTimeout(init_cards, 1500);
+//add listener
 i = 0;
 for (obj in obj_arr) 
     {

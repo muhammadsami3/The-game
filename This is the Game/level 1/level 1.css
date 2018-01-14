@@ -70,3 +70,12 @@ img {
 #points {
     text-align: right;
 }
+
+
+/* padges */
+
+#perfect_pag{
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
