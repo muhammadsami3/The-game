@@ -14,19 +14,14 @@ font {
 
 /* level points */
 
-#div1 {}
-
 #top {
-    position: absolute;
     bottom: 0px;
     height: 5%;
     width: 100%;
-    position: relative;
     left: 0%;
 }
 
 #div2 {
-    height: 50%;
     width: 100%;
     align-self: center;
 }
@@ -62,8 +57,6 @@ font {
 }
 
 .score {
-    height: 300px;
-    width: 1000px;
     position: relative;
     left: 25%;
     width: 50%;
@@ -127,13 +120,15 @@ font {
 }
 
 .padge {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
 }
 
-#padge1 {}
+#padge2 {
+    width: 70px;
+}
 
-#padge1 button {
+button {
     padding: 15px 25px;
     font-size: 29px;
     text-align: center;
@@ -164,8 +159,14 @@ img {
 
 #exit {
     position: relative;
-    bottom: 0;
-    left: 0;
+    top: 25%;
+    right: 90%;
+}
+
+#achive {
+    position: relative;
+    top: 30%;
+    right: 90%;
 }
 
 #points {
@@ -182,5 +183,5 @@ img {
 }
 
 .result {
-    /* display: none; */
+    display: none;
 }

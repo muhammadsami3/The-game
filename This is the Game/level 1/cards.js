@@ -3,8 +3,9 @@ var viewed = 0;
 var first_src = "";
 var first_id = "";
 var points = 0;
+var maxscore=10;
+var heartslost=0;
 var how_many_checked = 0;
-var perfect_pag=true;
 var points_par = document.getElementById("point");
 points_par.innerText = points;
 
@@ -15,6 +16,8 @@ function shuffleArray(img_arr) {
     }
 }
 var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
+var hearts = ['hearts.png', 'hearts1.png', 'hearts2.png','hearts3.png'];
+
 shuffleArray(img_arr);
 class cards {
     constructor(id, check, correct) {
@@ -68,13 +71,21 @@ function ch_img(obj, src, index) {
                                 {
                                     document.getElementById("score").innerHTML=points
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
-                                    document.getElementById("achive").setAttribute('style', "display:all");
-                                    document.getElementsByClassName(result)
-                                    document.getElementById("result_table").setAttribute('style', "display:all");                             
-                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points");
-                                    if (perfect_pag)
+                                  
+                                    var result=document.getElementsByClassName('result')
+                                    for(var i=0; i< result.length; i++)
                                     {
-                                        document.getElementById("perfect").setAttribute('style', "display:all");
+                                        result[i].setAttribute('style',"display:all");
+                                    }
+                                                                
+                                   
+                                    if (heartslost==0)
+                                    {
+                                        document.getElementById("padge1").setAttribute('src',"padge/pergold.png")
+                                    }
+                                    if(points==maxscore)
+                                    {
+                                        document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
                                     }
                                 }
 
@@ -84,7 +95,8 @@ function ch_img(obj, src, index) {
 
                                 var second_elem = document.getElementById(obj.id)
                                 second_elem.setAttribute('src', 'cardback.jpg')
-
+                                heartslost++;
+                                document.getElementById("heartImg").setAttribute('src',hearts[heartslost]);
                                 points -= 2;
                                 points_par.innerText = points;
                                 perfect_pag=false;
