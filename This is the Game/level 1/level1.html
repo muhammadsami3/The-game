@@ -10,84 +10,121 @@
 <body>
 
     <div id="div1">
-        <table id="table1">
-            <tr>
-                <td align="left">
-                    <div>
-                        <font size=15>Level 1</font>
-                    </div>
-                </td>
-                <td align="right">
-                    <div>
-                        <font size=11> points :</font>
-                        <output>
-                            <font id="point" size=11> 100</font>
-                        </output>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <br>
-
-    </div>
-    <div id="div2">
-        <div id="table2">
-            <table id="tableImg">
+        <div id="top">
+            <table id="table1" border="1">
                 <tr>
-                    <td align="center">
-                        <img id="img1" src="green.png" width="200">
+                    <td align="left">
+                        <div>
+                            <font size=8>Level 1</font>
+                        </div>
                     </td>
-                    <td align="center">
-                        <img id="img2" src="green.png" width="200">
+                    <td>
+                        <div id="hearts" class="harts">
+                            <img id="heartImg" src="hearts.png">
+                        </div>
                     </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <img id="img3" src="green.png" width="200">
+                    <td>
+                        <br>
                     </td>
-                    <td align="center">
-                        <img id="img4" src="green.png" width="200">
+                    <td>
+                        <div id="padge1" class="padge">
+                            <img id "padge1" class="padge" src="padge/perblack.jpg"> </td>
+                    </div>
+                    </td>
+                    <td>
+                        <div id="padge2" class="padge">
+                            <img id "padge2" class="padge" src="padge/perblack.jpg">
+                        </div>
+                    </td>
+                    <td>
+                        <div id="padge3" class="padge">
+                            <img id "padge3" class="padge" src="padge/perblack.jpg">
+                        </div>
+                    </td>
+                    <td align="right">
+                        <div>
+                            <font> points :</font>
+                            <output>
+                                <font id="point"> 100</font>
+                            </output>
+                        </div>
                     </td>
                 </tr>
             </table>
-            <div align="center">
-                <img id="img_comp" src="imgs/level_complete.png" style="display: none" align="center" width="1000">
-                <div id="enddiv" style="display: none">
-                    <font size=100> Your score is : </font>
-                    <output>
-                        <font id="score" size=100> </font>
-                    </output>
-                </div>
-                <div id="bestscoreDiv" style="display: none">
-                    <font size=100> Best score is : </font>
-                    <output>
-                        <font id="bestscore" size=100> </font>
-                    </output>
-                </div>
-
-            </div>
-            <div id="achive" style="display: none">
-                <output>
-                    <font id="achiv" size=9>Your Achievements </font>
-                </output>
-            </div>
-
-            <div id="perfect" style="display: none">
-                <font  size=4>Perfection : If we chase perfection we can catch excellence</font>
-                <img id="perfect_pag" src="imgs/background.jpg" > </div>
-        
         </div>
-    </div>
-    <br>
+        <br>
 
     </div>
-    <br>
-    <br>
+
+    <div id="table2">
+        <table id="tableImg" border="1">
+            <tr>
+                <td align="center">
+                    <img id="img1" class="gameImgs" " src="cardback.jpg " width="200 ">
+                    </td>
+
+                    <td align="center ">
+                        <img id="img2 " class="gameImgs "" src="cardback.jpg" width="200">
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <img id="img3" class="gameImgs" " rc="cardback.jpg " width="200 ">
+                    </td>
+                    <td align="center ">
+                        <img id="img4 " class="gameImgs "" src="cardback.jpg" width="200">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="levelcomimg" class="result">
+        <img id="img_comp" src="imgs/level_complete.png">
+    </div>
+
+    <div class="score" class="result" id="scoreOut">
+        <font class="result"> Your score </font>
+        <output>
+            <font id="score" class="result"> </font>
+        </output>
+    </div>
+    <div class="score" class="result" id="bestOut">
+        <font class="result"> Best score </font>
+        <output>
+            <font id="bestscore" class="result"> </font>
+        </output>
+    </div>
+
+    </div>
+
+
+    </div>
+
+    <div id="achive" class="result">
+        <output>
+            <font id="achiv" size=5>Your Achievements </font>
+        </output>
+    </div>
+
+    <div id="perfect">
+        <font size=3>> Perfection : If we chase perfection we can catch excellence</font>
+
+
+    </div>
+
+
+
+
     <div id="exit " align="left">
         <button>
-            <font> Exit </font>
+            <font size=5> Exit </font>
         </button>
     </div>
+
+    <br>
+    <br>
+
 </body>
 <script src="cards.js"></script>
 

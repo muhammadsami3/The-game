@@ -68,12 +68,10 @@ function ch_img(obj, src, index) {
                                 {
                                     document.getElementById("score").innerHTML=points
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
-                                    document.getElementById("img_comp").setAttribute('style',"display:all");
-                                    document.getElementById("enddiv").setAttribute('style',"display:all");
                                     document.getElementById("achive").setAttribute('style', "display:all");
-                                    document.getElementById("bestscoreDiv").setAttribute('style', "display:all");
-                                    
-                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points")
+                                    document.getElementsByClassName(result)
+                                    document.getElementById("result_table").setAttribute('style', "display:all");                             
+                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points");
                                     if (perfect_pag)
                                     {
                                         document.getElementById("perfect").setAttribute('style', "display:all");
@@ -82,10 +80,10 @@ function ch_img(obj, src, index) {
 
                             } else {
                                 var first_elem = document.getElementById(first_id)
-                                first_elem.setAttribute('src', 'green.png')
+                                first_elem.setAttribute('src', 'cardback.jpg')
 
                                 var second_elem = document.getElementById(obj.id)
-                                second_elem.setAttribute('src', 'green.png')
+                                second_elem.setAttribute('src', 'cardback.jpg')
 
                                 points -= 2;
                                 points_par.innerText = points;
@@ -115,7 +113,7 @@ var c3 = new cards('img3', false, false);
 var c4 = new cards('img4', false, false);
 //adding then to array
 var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
-var img_img1 = document.getElementsByTagName('img');
+var img_img1 = document.getElementsByClassName('gameImgs');
 var i = 0
 var obj;
 //showing cards
@@ -127,7 +125,7 @@ for (obj in obj_arr) {
 function init_cards() {
     var obj1;
     for (obj1 in obj_arr) {
-        obj_arr[obj1].set_img("green.png");
+        obj_arr[obj1].set_img("cardback.jpg");
     }
 }
 setTimeout(init_cards, 1500);

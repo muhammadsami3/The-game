@@ -5,20 +5,35 @@ body {
     background-attachment: fixed;
 }
 
+font {
+    font-family: fantasy;
+    font-style: italic;
+    font-size: 25px;
+}
+
 
 /* level points */
 
-#div1 {
-    height: 20%;
+#div1 {}
+
+#top {
+    position: absolute;
+    bottom: 0px;
+    height: 5%;
+    width: 100%;
+    position: relative;
+    left: 0%;
 }
 
 #div2 {
-    height: 80%;
+    height: 50%;
+    width: 100%;
+    align-self: center;
 }
 
 #table1 {
+    height: 5px;
     width: 100%;
-    align-self: center;
 }
 
 #table2 {
@@ -32,7 +47,93 @@ body {
     align-self: center;
 }
 
-button {
+#result_table {
+    position: relative;
+}
+
+#levelcomimg {
+    height: 200px;
+    width: 300px;
+    position: relative;
+    left: 50%;
+    width: 50%;
+    align-self: center;
+    align-items: center;
+}
+
+.score {
+    height: 300px;
+    width: 1000px;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    align-self: center;
+    align-items: center;
+}
+
+#levelcomimg {
+    height: 300px;
+    width: 1000px;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    align-self: center;
+    align-items: center;
+}
+
+#img_comp {
+    height: 200px;
+    width: 1000px;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    align-self: center;
+    align-items: center;
+}
+
+#scoreOut {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    left: 45%;
+    width: 50%;
+    bottom: 50px;
+    align-self: center;
+    align-items: center;
+}
+
+#bestOut {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    left: 45%;
+    width: 50%;
+    bottom: 300px;
+    align-self: center;
+    align-items: center;
+}
+
+#hearts {
+    vertical-align: 0px;
+    width: 200px;
+    height: 70px;
+}
+
+#heartImg {
+    width: 200px;
+    height: 70px;
+}
+
+.padge {
+    width: 50px;
+    height: 50px;
+}
+
+#padge1 {}
+
+#padge1 button {
     padding: 15px 25px;
     font-size: 29px;
     text-align: center;
@@ -62,7 +163,7 @@ img {
 }
 
 #exit {
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
 }
@@ -74,8 +175,12 @@ img {
 
 /* padges */
 
-#perfect_pag{
+#perfect_pag {
     position: relative;
     width: 100px;
     height: 100px;
+}
+
+.result {
+    /* display: none; */
 }
