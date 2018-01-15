@@ -81,6 +81,15 @@ function ch_img(obj, src, index) {
                                 {
                                     clearInterval(intervalHandle);
                                     document.getElementById("score").innerHTML=points
+                                    var passed_sec=minutes*60-secondsRemaining;
+                                    min = Math.floor(passed_sec / 60);////
+                                    sec = passed_sec- (min * 60)-1;////
+                                    if (sec < 10) {
+                                        sec = "0" + sec;///
+                                    }
+                                    // concatenate with colon////
+                                    message = min + ":" + sec;///
+                                    document.getElementById("finshtime").innerHTML= message;
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
                                   
                                     var result=document.getElementsByClassName('result')
