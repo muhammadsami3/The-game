@@ -2,6 +2,7 @@ var secondsRemaining;//timer
 var intervalHandle;//imer
 var minutes=1.5;//timer
 
+var two_right=0;
 var first_obj;
 var viewed = 0;
 var first_src = "";
@@ -64,6 +65,16 @@ function ch_img(obj, src, index) {
                                 obj.correct = true;
                                 how_many_checked += 2;
                                 points += 5;
+                                two_right++;
+                                if(two_right>=2)
+                                {
+                                    if(two_right==2)
+                                    {
+                                        points+=2; 
+                                    }
+                                    else{points+=3;}
+                                    
+                                }
                                 points_par.innerText = points;
                                 //local storage
                                 if (localStorage.getItem("max_points") < points) 
@@ -105,6 +116,7 @@ function ch_img(obj, src, index) {
                                 }
 
                             } else {
+                                two_right=0;
                                 var first_elem = document.getElementById(first_id)
                                 first_elem.setAttribute('src', 'cardback.jpg')
 
@@ -114,12 +126,10 @@ function ch_img(obj, src, index) {
                                 document.getElementById("heartImg").setAttribute('src',hearts[heartslost]);
                                 
                                 if (heartslost == 3) {
+                                    clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
                                     document.getElementById("tryagain").setAttribute('style', "display:all");
                                 }
-                                points -= 2;
-                                points_par.innerText = points;
-                                perfect_pag=false;
 
                             }
 
