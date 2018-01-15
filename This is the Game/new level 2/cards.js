@@ -1,8 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
 var minutes=1;//timer
-var timePadge = true;
-var timePadgeMargin;
 
 var first_obj;
 var viewed = 0;
@@ -94,10 +92,6 @@ function ch_img(obj, src, index) {
                                     {
                                         document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
                                     }
-                                    if(timePadge==true)
-                                    {
-                                        document.getElementById("padge2").setAttribute('src', "padge/timegold.png")   
-                                    }
                                 }
 
                             } else {
@@ -167,9 +161,6 @@ for (obj in obj_arr)
         // every second, call the "tick" function
         intervalHandle = setInterval(tick, 1000);
     }   
-
-var timePadgeMargin = 0.5 * secondsRemaining;
-
     function tick() {
         // grab the h1
         var timeDisplay = document.getElementById("time");
@@ -192,10 +183,6 @@ var timePadgeMargin = 0.5 * secondsRemaining;
             document.getElementById("tableImg").setAttribute('style',"display:none");
             document.getElementById("tryagain").setAttribute('style',"display:all");
             clearInterval(intervalHandle);
-        }
-        if (secondsRemaining < timePadgeMargin)
-        {
-            timePadge=false;
         }
         // subtract from seconds remaining
         secondsRemaining--;
