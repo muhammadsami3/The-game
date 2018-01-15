@@ -76,6 +76,15 @@ function ch_img(obj, src, index) {
                                 {
                                     clearInterval(intervalHandle);
                                     document.getElementById("score").innerHTML=points
+                                    var passed_sec=minutes*60-secondsRemaining;
+                                    min = Math.floor(passed_sec / 60);////
+                                    sec = passed_sec- (min * 60)-1;////
+                                    if (sec < 10) {
+                                        sec = "0" + sec;///
+                                    }
+                                    // concatenate with colon////
+                                    message = min + ":" + sec;///
+                                    document.getElementById("finshtime").innerHTML= message;
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
                                   
                                     var result=document.getElementsByClassName('result')
@@ -139,7 +148,7 @@ var c6 = new cards('img6', false, false);
 
 var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4, obj5: c5, obj6: c6 }
 //adding then to array
-var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
+var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4, obj5: c5, obj6: c6 }
 var img_img1 = document.getElementsByClassName('gameImgs');
 var i = 0
 var obj;
