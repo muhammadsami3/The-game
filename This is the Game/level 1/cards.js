@@ -80,7 +80,7 @@ function ch_img(obj, src, index) {
                                     var result=document.getElementsByClassName('result')
                                     for(var i=0; i< result.length; i++)
                                     {
-                                        result[i].setAttribute('style',"display:all");
+                                        result[i].style.display="block";
                                     }
                                                                 
                                    
