@@ -38,6 +38,7 @@ class cards {
     }
 }
 function ch_img(obj, src, index) {
+
     return function () {
         //if card is not correct
         if (!obj.correct) {
@@ -66,13 +67,15 @@ function ch_img(obj, src, index) {
                                 how_many_checked += 2;
                                 points += 5;
                                 points_par.innerText = points;
+
+
                                 //local storage
                                 if (localStorage.getItem("max_points") < points) 
                                     {
                                     localStorage.setItem("max_points", points)
                                     }
 
-                                    //level complete
+                                //level complete
                                 if(how_many_checked==img_arr.length)
                                 {
                                     clearInterval(intervalHandle);
@@ -84,8 +87,7 @@ function ch_img(obj, src, index) {
                                     {
                                         result[i].setAttribute('style',"display:all");
                                     }
-                                                                
-                                   
+                                    
                                     if (heartslost==0)
                                     {
                                         document.getElementById("padge1").setAttribute('src',"padge/pergold.png")
@@ -108,6 +110,11 @@ function ch_img(obj, src, index) {
                                 second_elem.setAttribute('src', 'cardback.jpg')
                                 heartslost++;
                                 document.getElementById("heartImg").setAttribute('src',hearts[heartslost]);
+                                if (heartslost==3)
+                                {
+                                    document.getElementById("tableImg").setAttribute('style', "display:none");
+                                    document.getElementById("tryagain").setAttribute('style', "display:all");
+                                }
                                 points -= 2;
                                 points_par.innerText = points;
                                 perfect_pag=false;
