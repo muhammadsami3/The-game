@@ -71,6 +71,7 @@ function ch_img(obj, src, index) {
                                     {
                                     localStorage.setItem("max_points", points)
                                     }
+                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points")
 
                                     //level complete
                                 if(how_many_checked==img_arr.length)
