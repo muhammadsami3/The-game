@@ -1,3 +1,7 @@
+var secondsRemaining;//timer
+var intervalHandle;//imer
+var minutes=1;//timer
+
 var first_obj;
 var viewed = 0;
 var first_src = "";
@@ -66,6 +70,7 @@ function ch_img(obj, src, index) {
                                     //level complete
                                 if(how_many_checked==img_arr.length)
                                 {
+                                    clearInterval(intervalHandle);
                                     document.getElementById("score").innerHTML=points
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
                                     document.getElementById("achive").setAttribute('style', "display:all");
@@ -127,6 +132,7 @@ function init_cards() {
     for (obj1 in obj_arr) {
         obj_arr[obj1].set_img("cardback.jpg");
     }
+    startCountdown();//timer
 }
 setTimeout(init_cards, 1500);
 //add listener
@@ -136,3 +142,37 @@ for (obj in obj_arr)
     img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i));
     i++
     }
+
+    function startCountdown() {//timer
+        // how many seconds?
+        secondsRemaining =  minutes * 60;
+        // every second, call the "tick" function
+        intervalHandle = setInterval(tick, 1000);
+    }   
+    function tick() {
+        // grab the h1
+        var timeDisplay = document.getElementById("time");
+        
+        // turn seconds into mm:ss
+        var min = Math.floor(secondsRemaining / 60);
+        var sec = secondsRemaining - (min * 60);
+        
+        // add a leading zero (as a string value) if seconds less than 10
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+        // concatenate with colon
+        var message = min + ":" + sec;
+        // now change the display
+        timeDisplay.innerHTML = message;
+        
+        // stop if down to zero
+        if (secondsRemaining === 0) {
+            document.getElementById("tableImg").setAttribute('style',"display:none");
+            document.getElementById("tryagain").setAttribute('style',"display:all");
+            clearInterval(intervalHandle);
+        }
+        // subtract from seconds remaining
+        secondsRemaining--;
+    }
+    
