@@ -1,8 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
 var minutes=1;//timer
-var timePadge = true;
-var timePadgeMargin;
 
 var first_obj;
 var viewed = 0;
@@ -82,7 +80,7 @@ function ch_img(obj, src, index) {
                                     var result=document.getElementsByClassName('result')
                                     for(var i=0; i< result.length; i++)
                                     {
-                                        result[i].style.display="block";
+                                        result[i].setAttribute('style',"display:all");
                                     }
                                                                 
                                    
@@ -93,10 +91,6 @@ function ch_img(obj, src, index) {
                                     if(points==maxscore)
                                     {
                                         document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
-                                    }
-                                    if(timePadge==true)
-                                    {
-                                        document.getElementById("padge2").setAttribute('src', "padge/timegold.png")   
                                     }
                                 }
 
@@ -167,9 +161,6 @@ for (obj in obj_arr)
         // every second, call the "tick" function
         intervalHandle = setInterval(tick, 1000);
     }   
-
-var timePadgeMargin = 0.5 * secondsRemaining;
-
     function tick() {
         // grab the h1
         var timeDisplay = document.getElementById("time");
@@ -192,10 +183,6 @@ var timePadgeMargin = 0.5 * secondsRemaining;
             document.getElementById("tableImg").setAttribute('style',"display:none");
             document.getElementById("tryagain").setAttribute('style',"display:all");
             clearInterval(intervalHandle);
-        }
-        if (secondsRemaining < timePadgeMargin)
-        {
-            timePadge=false;
         }
         // subtract from seconds remaining
         secondsRemaining--;
