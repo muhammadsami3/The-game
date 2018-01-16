@@ -72,11 +72,12 @@ function ch_img(obj, src, index) {
                                 {
                                     if(two_right==2)
                                     {
-                                        points+=2; 
+                                        points+=5; 
                                     }
                                     else{points+=3;}
                                     
                                 }
+                                
                                 points_par.innerText =points;
 
 
@@ -85,11 +86,7 @@ function ch_img(obj, src, index) {
                                     {
                                     localStorage.setItem("max_points1", points)
                                     }
-<<<<<<< HEAD
-                                document.getElementById("bestscore").innerText ="Best Score is : " +localStorage.getItem("max_points")
-=======
-                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points1")
->>>>>>> 76cc1b1f95a5049aad328b09d61e3423322d9760
+                                document.getElementById("bestscore").innerText ="Best Score is : " +localStorage.getItem("max_points1")
 
                                 //level complete
                                 if(how_many_checked==img_arr.length)
