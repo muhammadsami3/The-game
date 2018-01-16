@@ -81,11 +81,15 @@ function ch_img(obj, src, index) {
 
 
                                 //local storage
-                                if (localStorage.getItem("max_points") < points) 
+                                if (localStorage.getItem("max_points1") < points) 
                                     {
-                                    localStorage.setItem("max_points", points)
+                                    localStorage.setItem("max_points1", points)
                                     }
+<<<<<<< HEAD
                                 document.getElementById("bestscore").innerText ="Best Score is : " +localStorage.getItem("max_points")
+=======
+                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points1")
+>>>>>>> 76cc1b1f95a5049aad328b09d61e3423322d9760
 
                                 //level complete
                                 if(how_many_checked==img_arr.length)
