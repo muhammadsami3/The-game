@@ -4,6 +4,9 @@ var minutes=0.1;//timer
 var timePadge = true;
 var timePadgeMargin;
 
+
+
+
 var two_right=0;
 var first_obj;
 var viewed = 0;
@@ -38,37 +41,47 @@ class cards {
         this.check = !this.check;
     }
 }
+
+
+
+
 function ch_img(obj, src, index) {
+
+    
 
     return function () {
         //if card is not correct
         if (!obj.correct) {
-
+           
 
             //if it's not the same card
             if (obj.id != first_id) {
                 //if the shown less than 2 card
                 if (viewed < 2) {
 
-                    value="PLAY";
-                    onclick="play()";
-                    
                     obj.set_img(src);
                     viewed++;
+
+                    
+                    function PlaySound(soundObj) {
+                        var sound = document.getElementById(soundObj);
+                        sound.Play();
+                    }
+                    
                     //first card shown just save it
                     if (viewed == 1) {
                         first_src = src;
                         first_id = obj.id;
                         first_obj = obj
 
-
-                       
+                    
+                      
 
                     }
                      //if it's the second card shown
                     if (viewed == 2) {
 
-
+                        
                     
                         var delay_fun = function () {
                             if (first_src == src) {
