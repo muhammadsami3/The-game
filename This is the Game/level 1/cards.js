@@ -1,6 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=1;//timer
+var minutes=0.1;//timer
 var timePadge = true;
 var timePadgeMargin;
 
@@ -10,7 +10,7 @@ var viewed = 0;
 var first_src = "";
 var first_id = "";
 var points = 0;
-var maxscore=10;
+var maxscore=15;
 var heartslost=0;
 var how_many_checked = 0;
 var points_par = document.getElementById("point");
@@ -88,12 +88,13 @@ function ch_img(obj, src, index) {
                                 {
                                     if(two_right==2)
                                     {
-                                        points+=2; 
+                                        points+=5; 
                                     }
                                     else{points+=3;}
                                     
                                 }
-                                points_par.innerText = points;
+                                
+                                points_par.innerText =points;
 
 
                                 //local storage
@@ -101,13 +102,13 @@ function ch_img(obj, src, index) {
                                     {
                                     localStorage.setItem("max_points1", points)
                                     }
-                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points1")
+                                document.getElementById("bestscore").innerText ="Best Score is : " +localStorage.getItem("max_points1")
 
                                 //level complete
                                 if(how_many_checked==img_arr.length)
                                 {
                                     clearInterval(intervalHandle);
-                                    document.getElementById("score").innerHTML=points
+                                    document.getElementById("score").innerHTML = "Your Score is : "+points
                                     var passed_sec=minutes*60-secondsRemaining;
                                     min = Math.floor(passed_sec / 60);////
                                     sec = passed_sec- (min * 60)-1;////
@@ -115,8 +116,9 @@ function ch_img(obj, src, index) {
                                         sec = "0" + sec;///
                                     }
                                     // concatenate with colon////
-                                    message = min + ":" + sec;///
-                                    document.getElementById("finshtime").innerHTML= message;
+
+                                    message = min + ":" + sec;
+                                    document.getElementById("finshtime").innerHTML = "Your Time is : "+ message;
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
                                   
                                     var result=document.getElementsByClassName('result')
