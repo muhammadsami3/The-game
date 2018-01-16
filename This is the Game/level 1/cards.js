@@ -69,15 +69,7 @@ function ch_img(obj, src, index) {
                     if (viewed == 2) {
 
 
-                        function PlaySound(audio) {
-        
-                            var sound = document.getElementById(audio);
-        
-                            sound.Play();
-  
-                        }
-
-
+                    
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
