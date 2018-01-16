@@ -1,8 +1,8 @@
 body {
-    background-image: url("bg/(1).png");
+    background-image: url("bg/(3).jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+   
 }
 
 font {
@@ -159,7 +159,7 @@ img {
 
 #exit {
     position: relative;
-    top: 25%;
+    top: 15%;
     right: 90%;
 }
 
@@ -183,7 +183,7 @@ img {
 }
 
 .result {
-
+    
     display: none;
-
+    
 }

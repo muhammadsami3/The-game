@@ -1,8 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=1;//timer
-var timePadge = true;
-var timePadgeMargin;
+var minutes=1.5;//timer
 
 var two_right=0;
 var first_obj;
@@ -22,10 +20,11 @@ function shuffleArray(img_arr) {
         [img_arr[i], img_arr[j]] = [img_arr[j], img_arr[i]];
     }
 }
-var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
+var img_arr = ['imgs/pic10.jpg', 'imgs/pic11.jpg', 'imgs/pic12.jpg', 'imgs/pic10.jpg', 'imgs/pic11.jpg', 'imgs/pic12.jpg'];
 var hearts = ['hearts.png', 'hearts1.png', 'hearts2.png','hearts3.png'];
 
 shuffleArray(img_arr);
+
 class cards {
     constructor(id, check, correct) {
         this.id = id
@@ -39,7 +38,6 @@ class cards {
     }
 }
 function ch_img(obj, src, index) {
-
     return function () {
         //if card is not correct
         if (!obj.correct) {
@@ -78,16 +76,14 @@ function ch_img(obj, src, index) {
                                     
                                 }
                                 points_par.innerText = points;
-
-
                                 //local storage
-                                if (localStorage.getItem("max_points1") < points) 
+                                if (localStorage.getItem("max_points2") < points) 
                                     {
-                                    localStorage.setItem("max_points1", points)
+                                    localStorage.setItem("max_points2", points)
                                     }
-                                    document.getElementById("bestscore").innerText=localStorage.getItem("max_points1")
+                                    document.getElementById("bestscore").innerHTML=localStorage.getItem("max_points2")
 
-                                //level complete
+                                    //level complete
                                 if(how_many_checked==img_arr.length)
                                 {
                                     clearInterval(intervalHandle);
@@ -106,9 +102,10 @@ function ch_img(obj, src, index) {
                                     var result=document.getElementsByClassName('result')
                                     for(var i=0; i< result.length; i++)
                                     {
-                                        result[i].style.display="block";
+                                        result[i].setAttribute('style',"display:block");
                                     }
-                                    
+                                                                
+                                   
                                     if (heartslost==0)
                                     {
                                         document.getElementById("padge1").setAttribute('src',"padge/pergold.png")
@@ -116,10 +113,6 @@ function ch_img(obj, src, index) {
                                     if(points==maxscore)
                                     {
                                         document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
-                                    }
-                                    if(timePadge==true)
-                                    {
-                                        document.getElementById("padge2").setAttribute('src', "padge/timegold.png")   
                                     }
                                 }
 
@@ -132,8 +125,8 @@ function ch_img(obj, src, index) {
                                 second_elem.setAttribute('src', 'cardback.jpg')
                                 heartslost++;
                                 document.getElementById("heartImg").setAttribute('src',hearts[heartslost]);
-                                if (heartslost==3)
-                                {
+                                
+                                if (heartslost == 3) {
                                     clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
                                     document.getElementById("tryagain").setAttribute('style', "display:all");
@@ -161,16 +154,22 @@ var c1 = new cards('img1', false, false);
 var c2 = new cards('img2', false, false);
 var c3 = new cards('img3', false, false);
 var c4 = new cards('img4', false, false);
+var c5 = new cards('img5', false, false);
+var c6 = new cards('img6', false, false);
+
+var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4, obj5: c5, obj6: c6 }
 //adding then to array
-var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
+var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4, obj5: c5, obj6: c6 }
 var img_img1 = document.getElementsByClassName('gameImgs');
 var i = 0
 var obj;
+
 //showing cards
 for (obj in obj_arr) {
     obj_arr[obj].set_img(img_arr[i]);
     i++;
 }
+
 //closing cards 
 function init_cards() {
     var obj1;
@@ -194,9 +193,6 @@ for (obj in obj_arr)
         // every second, call the "tick" function
         intervalHandle = setInterval(tick, 1000);
     }   
-
-var timePadgeMargin = 0.5 * secondsRemaining;
-
     function tick() {
         // grab the h1
         var timeDisplay = document.getElementById("time");
@@ -219,10 +215,6 @@ var timePadgeMargin = 0.5 * secondsRemaining;
             document.getElementById("tableImg").setAttribute('style',"display:none");
             document.getElementById("tryagain").setAttribute('style',"display:all");
             clearInterval(intervalHandle);
-        }
-        if (secondsRemaining < timePadgeMargin)
-        {
-            timePadge=false;
         }
         // subtract from seconds remaining
         secondsRemaining--;
