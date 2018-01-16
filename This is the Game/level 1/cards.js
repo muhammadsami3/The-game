@@ -43,11 +43,16 @@ function ch_img(obj, src, index) {
     return function () {
         //if card is not correct
         if (!obj.correct) {
+
+
             //if it's not the same card
             if (obj.id != first_id) {
                 //if the shown less than 2 card
                 if (viewed < 2) {
 
+                    value="PLAY";
+                    onclick="play()";
+                    
                     obj.set_img(src);
                     viewed++;
                     //first card shown just save it
@@ -55,9 +60,23 @@ function ch_img(obj, src, index) {
                         first_src = src;
                         first_id = obj.id;
                         first_obj = obj
+
+
+                       
+
                     }
                      //if it's the second card shown
                     if (viewed == 2) {
+
+
+                        function PlaySound(audio) {
+        
+                            var sound = document.getElementById(audio);
+        
+                            sound.Play();
+  
+                        }
+
 
                         var delay_fun = function () {
                             if (first_src == src) {
@@ -65,6 +84,11 @@ function ch_img(obj, src, index) {
                                 first_obj.correct = true;
                                 var second_elem = document.getElementById(obj.id)
                                 obj.correct = true;
+                                
+                                
+                                
+
+                                
                                 how_many_checked += 2;
                                 points += 5;
                                 two_right++;
@@ -155,6 +179,11 @@ function ch_img(obj, src, index) {
         }
     }
 }
+
+
+
+
+
 //function declartion ()
 //creating objects
 var c1 = new cards('img1', false, false);
