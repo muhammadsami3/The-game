@@ -36,16 +36,20 @@ class cards {
         this.check = check
         this.correct = correct
     }
+
     set_img(new_src) {
         var img_id = document.getElementById(this.id)
         img_id.setAttribute('src', new_src)
         this.check = !this.check;
+        console.log(this.id);
+        
     }
 }
 
 
 
 
+<<<<<<< HEAD
 function ch_img(obj, src, index,activeImg) {
 
     
@@ -53,9 +57,10 @@ function ch_img(obj, src, index,activeImg) {
     
 
 
+=======
+function ch_img(obj, src, index) {
+>>>>>>> bec4e5e3439dc766211d31aeca867946a552acc7
     return function () {
-
-
         function PlaySound() {
             var sound = document.getElementById("sound1");
             var audio = new Audio(sound.src);
@@ -67,7 +72,6 @@ function ch_img(obj, src, index,activeImg) {
         //if card is not correct
         if (!obj.correct) {
            
-
             //if it's not the same card
             if (obj.id != first_id) {
                 //if the shown less than 2 card
@@ -77,33 +81,22 @@ function ch_img(obj, src, index,activeImg) {
                     obj.set_img(src);
 
                     viewed++;
-
-
-                    
                     
                     //first card shown just save it
                     if (viewed == 1) {
                         first_src = src;
                         first_id = obj.id;
                         first_obj = obj
-
-                  
-
                     }
                      //if it's the second card shown
                     if (viewed == 2) {
 
-                        
-                    
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
                                 first_obj.correct = true;
                                 var second_elem = document.getElementById(obj.id)
                                 obj.correct = true;
-                                
-                                
-            
                                 
                                 how_many_checked += 2;
                                 points += 5;
@@ -178,7 +171,12 @@ function ch_img(obj, src, index,activeImg) {
                                 {
                                     clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
-                                    document.getElementById("tryagain").setAttribute('style', "display:all");
+                                    var fail = document.getElementsByClassName('fail')
+                                    for (var i = 0; i < fail.length; i++) {
+                                        fail[i].setAttribute('style',"display:block");
+                                    }
+                                  
+                            
                                 }
 
                             }
@@ -187,7 +185,11 @@ function ch_img(obj, src, index,activeImg) {
                             first_src = "";
                             first_id = "";
                         }
+<<<<<<< HEAD
                         setTimeout(delay_fun, 500);
+=======
+                        setTimeout(delay_fun,400);
+>>>>>>> bec4e5e3439dc766211d31aeca867946a552acc7
                     }
 
 
@@ -209,7 +211,7 @@ function ch_img(obj, src, index,activeImg) {
 var c1 = new cards('img1', false, false);
 var c2 = new cards('img2', false, false);
 var c3 = new cards('img3', false, false);
-var c4 = new cards('img4', false, false);
+var c4 = new cards('img10', false, false);
 //adding then to array
 var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
 var img_img1 = document.getElementsByClassName('gameImgs');
@@ -234,10 +236,15 @@ i = 0;
 var active=[];
 for (obj in obj_arr) 
     {
+<<<<<<< HEAD
         active[i]=document.getElementById(card[i]);
         img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i,active[i]));
     
+=======
+    img_img1[i].addEventListener('click',ch_img(obj_arr[obj], img_arr[i], i));
+>>>>>>> bec4e5e3439dc766211d31aeca867946a552acc7
     i++
+    console.log(i);
     }
 
     function startCountdown() {//timer
@@ -247,7 +254,7 @@ for (obj in obj_arr)
         intervalHandle = setInterval(tick, 1000);
     }   
 
-var timePadgeMargin = 0.5 * secondsRemaining;
+ 
 
     function tick() {
         // grab the h1
@@ -269,9 +276,16 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         // stop if down to zero
         if (secondsRemaining === 0) { /// checking
             document.getElementById("tableImg").setAttribute('style',"display:none");
-            document.getElementById("tryagain").setAttribute('style',"display:all");
+            // document.getElementById("tryagain").setAttribute('style',"display:block");
+            // document.getElementById("tryagain2").setAttribute('style', "display:block");
+            var fail = document.getElementsByClassName('fail')
+            for (var i = 0; i < fail.length; i++) {
+                fail[i].setAttribute('style', "display:block");
+            }
+
             clearInterval(intervalHandle);
         }
+        timePadgeMargin = 0.5 * minutes*60;
         if (secondsRemaining < timePadgeMargin)
         {
             timePadge=false;
@@ -279,4 +293,6 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         // subtract from seconds remaining
         secondsRemaining--;
     }
+
+
     
