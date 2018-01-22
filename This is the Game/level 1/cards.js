@@ -195,12 +195,13 @@ function ch_img(obj, src, index) {
 var c1 = new cards('img1', false, false);
 var c2 = new cards('img2', false, false);
 var c3 = new cards('img3', false, false);
-var c4 = new cards('img10', false, false);
+var c4 = new cards('img4', false, false);
 //adding then to array
 var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
 var img_img1 = document.getElementsByClassName('gameImgs');
 var i = 0
 var obj;
+
 //showing cards
 for (obj in obj_arr) {
     obj_arr[obj].set_img(img_arr[i]);
@@ -212,8 +213,10 @@ function init_cards() {
     for (obj1 in obj_arr) {
         obj_arr[obj1].set_img("cardback.jpg");
     }
+
     startCountdown();//timer
 }
+
 setTimeout(init_cards, 1500);
 //add listener
 i = 0;
