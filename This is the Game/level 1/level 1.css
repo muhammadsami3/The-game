@@ -183,8 +183,30 @@ img {
 }
 
 .result {
-
     display: none;
-   
+}
 
+.tryagain {
+    position: relative;
+    left: 43%;
+}
+
+#tryagain {
+    display: none;
+    width: 200px;
+    height: 200px;
+}
+
+.tryagain2 {
+   
+    position: relative;
+    right: 10%;
+    width: 600px;
+    height: 405px;
+}
+
+#tryagain2 {
+    display: none;
+    width: 410px;
+    height: 200px;
 }

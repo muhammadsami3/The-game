@@ -169,6 +169,7 @@ function ch_img(obj, src, index) {
                                     clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
                                     document.getElementById("tryagain").setAttribute('style', "display:all");
+                                    document.getElementById("tryagain2").setAttribute('style', "display:block");
                                 }
 
                             }
@@ -177,7 +178,7 @@ function ch_img(obj, src, index) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun, 100);
+                        setTimeout(delay_fun, 500);
                     }
 
 
@@ -256,7 +257,8 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         // stop if down to zero
         if (secondsRemaining === 0) { /// checking
             document.getElementById("tableImg").setAttribute('style',"display:none");
-            document.getElementById("tryagain").setAttribute('style',"display:all");
+            document.getElementById("tryagain").setAttribute('style',"display:block");
+            document.getElementById("tryagain2").setAttribute('style', "display:block");
             clearInterval(intervalHandle);
         }
         if (secondsRemaining < timePadgeMargin)
@@ -266,4 +268,11 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         // subtract from seconds remaining
         secondsRemaining--;
     }
+
+var tryagain = document.getElementById("tryagain");
+tryagain.addEventListener('click',refresh());
+
+function refresh() {
+    ocument.location.reload(true);
+}
     
