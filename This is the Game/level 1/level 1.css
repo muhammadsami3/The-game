@@ -12,7 +12,6 @@ font {
 }
 
 
-
 /* level points */
 
 #top {
@@ -53,7 +52,6 @@ font {
     position: relative;
     left: 50%;
     width: 50%;
-    
     align-self: center;
     align-items: center;
 }
@@ -189,13 +187,17 @@ img {
     display: none;
 }
 
+.fail {
+    display: none;
+}
+
 .tryagain {
     position: relative;
     left: 43%;
 }
 
 #tryagain {
-    display: none;
+   
     width: 200px;
     height: 200px;
 }
@@ -208,12 +210,10 @@ img {
 }
 
 #tryagain2 {
-    display: none;
+   
     width: 410px;
     height: 200px;
 }
-
-
 
 html,
 body {
