@@ -1,6 +1,11 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
 var minutes=1.5;//timer
+<<<<<<< HEAD
+=======
+var timePadge = true;
+var timePadgeMargin = 0.5 * (minutes*60);
+>>>>>>> sami-branch
 
 var two_right=0;
 var first_obj;
@@ -68,12 +73,16 @@ function ch_img(obj, src, index) {
                                 two_right++;
                                 if(two_right>=2)
                                 {
+<<<<<<< HEAD
                                     if(two_right==2)
                                     {
                                         points+=2; 
                                     }
                                     else{points+=3;}
                                     
+=======
+                                        points+=(two_right-1)*5; 
+>>>>>>> sami-branch
                                 }
                                 points_par.innerText = points;
                                 //local storage
@@ -110,10 +119,21 @@ function ch_img(obj, src, index) {
                                     {
                                         document.getElementById("padge1").setAttribute('src',"padge/pergold.png")
                                     }
+<<<<<<< HEAD
                                     if(points==maxscore)
                                     {
                                         document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
                                     }
+=======
+                                    if(points>=maxscore)
+                                    {
+                                        document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
+                                    }
+                                    if(timePadge==true)
+                                    {
+                                        document.getElementById("padge2").setAttribute('src', "padge/timegold.png")   
+                                    }
+>>>>>>> sami-branch
                                 }
 
                             } else {
@@ -193,6 +213,10 @@ for (obj in obj_arr)
         // every second, call the "tick" function
         intervalHandle = setInterval(tick, 1000);
     }   
+<<<<<<< HEAD
+=======
+  
+>>>>>>> sami-branch
     function tick() {
         // grab the h1
         var timeDisplay = document.getElementById("time");
@@ -216,6 +240,13 @@ for (obj in obj_arr)
             document.getElementById("tryagain").setAttribute('style',"display:all");
             clearInterval(intervalHandle);
         }
+<<<<<<< HEAD
+=======
+        if (secondsRemaining < timePadgeMargin)
+        {
+            timePadge=false;
+        }
+>>>>>>> sami-branch
         // subtract from seconds remaining
         secondsRemaining--;
     }

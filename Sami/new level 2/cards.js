@@ -1,22 +1,16 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=0.1;//timer
+var minutes=1.5;//timer
 var timePadge = true;
-var timePadgeMargin;
+var timePadgeMargin = 0.5 * (minutes*60);
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> sami-branch
 var two_right=0;
 var first_obj;
 var viewed = 0;
 var first_src = "";
 var first_id = "";
 var points = 0;
-var maxscore=15;
+var maxscore=10;
 var heartslost=0;
 var how_many_checked = 0;
 var points_par = document.getElementById("point");
@@ -28,10 +22,11 @@ function shuffleArray(img_arr) {
         [img_arr[i], img_arr[j]] = [img_arr[j], img_arr[i]];
     }
 }
-var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
+var img_arr = ['imgs/pic10.jpg', 'imgs/pic11.jpg', 'imgs/pic12.jpg', 'imgs/pic10.jpg', 'imgs/pic11.jpg', 'imgs/pic12.jpg'];
 var hearts = ['hearts.png', 'hearts1.png', 'hearts2.png','hearts3.png'];
 
 shuffleArray(img_arr);
+
 class cards {
     constructor(id, check, correct) {
         this.id = id
@@ -44,27 +39,10 @@ class cards {
         this.check = !this.check;
     }
 }
-<<<<<<< HEAD
-
-
-
-
 function ch_img(obj, src, index) {
-
-    
-
     return function () {
         //if card is not correct
         if (!obj.correct) {
-           
-
-=======
-function ch_img(obj, src, index) {
-
-    return function () {
-        //if card is not correct
-        if (!obj.correct) {
->>>>>>> sami-branch
             //if it's not the same card
             if (obj.id != first_id) {
                 //if the shown less than 2 card
@@ -72,83 +50,41 @@ function ch_img(obj, src, index) {
 
                     obj.set_img(src);
                     viewed++;
-<<<<<<< HEAD
-
-                    
-                    function PlaySound(soundObj) {
-                        var sound = document.getElementById(soundObj);
-                        sound.Play();
-                    }
-                    
-=======
->>>>>>> sami-branch
                     //first card shown just save it
                     if (viewed == 1) {
                         first_src = src;
                         first_id = obj.id;
                         first_obj = obj
-<<<<<<< HEAD
-
-                    
-                      
-
-=======
->>>>>>> sami-branch
                     }
                      //if it's the second card shown
                     if (viewed == 2) {
 
-<<<<<<< HEAD
-                        
-                    
-=======
->>>>>>> sami-branch
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
                                 first_obj.correct = true;
                                 var second_elem = document.getElementById(obj.id)
                                 obj.correct = true;
-<<<<<<< HEAD
-                                
-                                
-                                
-
-                                
-=======
->>>>>>> sami-branch
                                 how_many_checked += 2;
                                 points += 5;
                                 two_right++;
                                 if(two_right>=2)
                                 {
-<<<<<<< HEAD
-                                    if(two_right==2)
-                                    {
-                                        points+=5; 
-                                    }
-                                    else{points+=3;}
-                                    
-=======
-                                    points+=(two_right - 1)*5;     
->>>>>>> sami-branch
+                                        points+=(two_right-1)*5; 
                                 }
-                                
-                                points_par.innerText =points;
-
-
+                                points_par.innerText = points;
                                 //local storage
-                                if (localStorage.getItem("max_points1") < points) 
+                                if (localStorage.getItem("max_points2") < points) 
                                     {
-                                    localStorage.setItem("max_points1", points)
+                                    localStorage.setItem("max_points2", points)
                                     }
-                                document.getElementById("bestscore").innerText ="Best Score is : " +localStorage.getItem("max_points1")
+                                    document.getElementById("bestscore").innerHTML=localStorage.getItem("max_points2")
 
-                                //level complete
+                                    //level complete
                                 if(how_many_checked==img_arr.length)
                                 {
                                     clearInterval(intervalHandle);
-                                    document.getElementById("score").innerHTML = "Your Score is : "+points
+                                    document.getElementById("score").innerHTML=points
                                     var passed_sec=minutes*60-secondsRemaining;
                                     min = Math.floor(passed_sec / 60);////
                                     sec = passed_sec- (min * 60)-1;////
@@ -156,26 +92,22 @@ function ch_img(obj, src, index) {
                                         sec = "0" + sec;///
                                     }
                                     // concatenate with colon////
-
-                                    message = min + ":" + sec;
-                                    document.getElementById("finshtime").innerHTML = "Your Time is : "+ message;
+                                    message = min + ":" + sec;///
+                                    document.getElementById("finshtime").innerHTML= message;
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
                                   
                                     var result=document.getElementsByClassName('result')
                                     for(var i=0; i< result.length; i++)
                                     {
-                                        result[i].style.display="block";
+                                        result[i].setAttribute('style',"display:block");
                                     }
-                                    
+                                                                
+                                   
                                     if (heartslost==0)
                                     {
                                         document.getElementById("padge1").setAttribute('src',"padge/pergold.png")
                                     }
-<<<<<<< HEAD
-                                    if(points==maxscore)
-=======
                                     if(points>=maxscore)
->>>>>>> sami-branch
                                     {
                                         document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
                                     }
@@ -194,8 +126,8 @@ function ch_img(obj, src, index) {
                                 second_elem.setAttribute('src', 'cardback.jpg')
                                 heartslost++;
                                 document.getElementById("heartImg").setAttribute('src',hearts[heartslost]);
-                                if (heartslost==3)
-                                {
+                                
+                                if (heartslost == 3) {
                                     clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
                                     document.getElementById("tryagain").setAttribute('style', "display:all");
@@ -217,30 +149,28 @@ function ch_img(obj, src, index) {
         }
     }
 }
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> sami-branch
 //function declartion ()
 //creating objects
 var c1 = new cards('img1', false, false);
 var c2 = new cards('img2', false, false);
 var c3 = new cards('img3', false, false);
 var c4 = new cards('img4', false, false);
+var c5 = new cards('img5', false, false);
+var c6 = new cards('img6', false, false);
+
+var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4, obj5: c5, obj6: c6 }
 //adding then to array
-var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
+var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4, obj5: c5, obj6: c6 }
 var img_img1 = document.getElementsByClassName('gameImgs');
 var i = 0
 var obj;
+
 //showing cards
 for (obj in obj_arr) {
     obj_arr[obj].set_img(img_arr[i]);
     i++;
 }
+
 //closing cards 
 function init_cards() {
     var obj1;
@@ -264,13 +194,7 @@ for (obj in obj_arr)
         // every second, call the "tick" function
         intervalHandle = setInterval(tick, 1000);
     }   
-
-<<<<<<< HEAD
-var timePadgeMargin = 0.5 * secondsRemaining;
-=======
-var timePadgeMargin = 0.5 * (minutes*60);
->>>>>>> sami-branch
-
+  
     function tick() {
         // grab the h1
         var timeDisplay = document.getElementById("time");
