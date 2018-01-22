@@ -63,6 +63,7 @@ function ch_img(obj, src, index) {
         }
         PlaySound();
        
+        if(secondsRemaining>0){
         //if card is not correct
         if (!obj.correct) {
            
@@ -184,14 +185,16 @@ function ch_img(obj, src, index) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun, 1000);
+                        setTimeout(delay_fun, 100);
                     }
 
 
-                }
+                
+            }
 
             }
         }
+    }
     }
 }
 
@@ -259,7 +262,7 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         timeDisplay.innerHTML = message;
         
         // stop if down to zero
-        if (secondsRemaining === 0) {
+        if (secondsRemaining === 0) { /// checking
             document.getElementById("tableImg").setAttribute('style',"display:none");
             document.getElementById("tryagain").setAttribute('style',"display:all");
             clearInterval(intervalHandle);
