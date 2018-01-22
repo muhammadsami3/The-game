@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--html lang="en"-->
 
 <head>
     <link rel="stylesheet" href="level 1.css">
@@ -62,7 +62,7 @@
             <tr>
                 <td align="center">
 
-                    <img id="img1" class="gameImgs" value="PLAY"  onclick="play()" src="cardback.jpg " width="200 "> 
+                    <img id="img1" class="gameImgs" src="cardback.jpg " width="200 "> 
 
                 </td>
 
@@ -129,9 +129,9 @@
         </div>
 
 <div id="exit" align="left">
-    <button>
+    <a href='../map.html'> <button>
         <font size=5> Exit </font>
-    </button>
+    </button></a>
 </div>
         <div id="achive" class="result">
             <div >
@@ -154,21 +154,15 @@
     <br>
     
  
-
+    <audio id="sound1" src="newgamebutton.mp3" ></audio>
+    <audio  src="backgroundmusic.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
 
 
 </body>
 <script src="cards.js">
    
-   function play()
-  {
-       var audio = document.getElementById("img1");
-       audio.play();
-                 }
-
 </script>
-<audio id="img1" src="newgamebutton.mp3" ></audio>
-<embed src="backgroundmusic.mp3" loop="true"  autostart="true" autorun="true" hidden="true"></embed>
+
 </html>
 
 
