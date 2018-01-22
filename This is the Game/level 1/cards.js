@@ -242,7 +242,7 @@ for (obj in obj_arr)
         intervalHandle = setInterval(tick, 1000);
     }   
 
-var timePadgeMargin = 0.5 * secondsRemaining;
+ 
 
     function tick() {
         // grab the h1
@@ -267,6 +267,7 @@ var timePadgeMargin = 0.5 * secondsRemaining;
             document.getElementById("tryagain").setAttribute('style',"display:all");
             clearInterval(intervalHandle);
         }
+        timePadgeMargin = 0.5 * minutes*60;
         if (secondsRemaining < timePadgeMargin)
         {
             timePadge=false;
