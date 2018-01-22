@@ -91,7 +91,7 @@ font {
     position: relative;
     left: 45%;
     width: 50%;
-    bottom: 250px;
+    bottom: 50px;
     align-self: center;
     align-items: center;
 }
@@ -103,7 +103,7 @@ font {
     position: relative;
     left: 45%;
     width: 50%;
-    bottom: 500px;
+    bottom: 300px;
     align-self: center;
     align-items: center;
 }
@@ -183,39 +183,10 @@ img {
 }
 
 .result {
-    bottom: 150px;
+
     display: none;
-}
-
-.fail {
-    display: none;
-}
-
-.tryagain {
-    position: relative;
-    left: 43%;
-}
-
-#tryagain {
    
-    width: 200px;
-    height: 200px;
-}
 
-.tryagain2 {
-    position: relative;
-    right: 10%;
-    width: 0px;
-    height: 150px;
-}
-
-#tryagain2 {
-   
-    width: 410px;
-    height: 200px;
-}
-
-<<<<<<< HEAD
 }
 /* #f1_container {
     position: relative;
@@ -282,11 +253,3 @@ img {
   #card1.active {
     transform: rotateY( 180deg );
   }
-=======
-html,
-body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden
-}
->>>>>>> bec4e5e3439dc766211d31aeca867946a552acc7
