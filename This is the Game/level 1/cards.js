@@ -27,6 +27,7 @@ function shuffleArray(img_arr) {
 }
 var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
 var hearts = ['hearts.png', 'hearts1.png', 'hearts2.png','hearts3.png'];
+var card =['card1','card2','card3','card4']
 
 shuffleArray(img_arr);
 class cards {
@@ -45,7 +46,7 @@ class cards {
 
 
 
-function ch_img(obj, src, index) {
+function ch_img(obj, src, index,activeImg) {
 
     
 
@@ -59,7 +60,6 @@ function ch_img(obj, src, index) {
             var sound = document.getElementById("sound1");
             var audio = new Audio(sound.src);
             audio.play();
-            console.log("in");
         }
         PlaySound();
        
@@ -72,8 +72,10 @@ function ch_img(obj, src, index) {
             if (obj.id != first_id) {
                 //if the shown less than 2 card
                 if (viewed < 2) {
-
+                    activeImg.classList.add('active');
+                    console.log(activeImg);
                     obj.set_img(src);
+
                     viewed++;
 
 
@@ -185,7 +187,7 @@ function ch_img(obj, src, index) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun, 100);
+                        setTimeout(delay_fun, 500);
                     }
 
 
@@ -229,9 +231,12 @@ function init_cards() {
 setTimeout(init_cards, 1500);
 //add listener
 i = 0;
+var active=[];
 for (obj in obj_arr) 
     {
-    img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i));
+        active[i]=document.getElementById(card[i]);
+        img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i,active[i]));
+    
     i++
     }
 

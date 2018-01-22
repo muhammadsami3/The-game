@@ -11,7 +11,7 @@
 
     <div id="div1">
         <div id="top">
-            <table id="table1" >
+            <table id="table1">
                 <tr>
                     <td align="left">
                         <div>
@@ -27,19 +27,19 @@
                         <h1 id="time">0:00</h1>
                     </td>
                     <td align="right">
-                        <div  class="padge">
+                        <div class="padge">
                             <img id="padge1" class="padge" src="padge/perblack.png"> </td>
                     </div>
                     </td>
 
                     <td align="center">
-                        <div  class="padge">
+                        <div class="padge">
                             <img id="padge2" class="padge" src="padge/timeblack.png">
                         </div>
                     </td>
 
                     <td align="left">
-                        <div  align="right" class="padge">
+                        <div align="right" class="padge">
                             <img id="padge3" class="padge" src="padge/blackstar.png">
                         </div>
                     </td>
@@ -62,7 +62,22 @@
             <tr>
                 <td align="center">
 
-                    <img id="img1" class="gameImgs" src="cardback.jpg " width="200 "> 
+                    <!-- <div id="f1_container">
+                        <div id="f1_card" class="shadow">
+                            <div class="front face">
+                                <img id="1" class="gameImgs" src="cardback.jpg" width="200">
+                            </div>
+                            <div class="back face center">
+                                <img id="img1" class="1" src="cardback.jpg" width="200">
+                            </div>
+                        </div>
+                    </div> -->
+                    <section class="container">
+                        <div id="card1">
+                            <img id="1" class="gameImgs front" src="cardback.jpg" width="200">
+                            <img id="img1" class="1 back" src="cardback.jpg" width="200">
+                        </div>
+                      </section>
 
                 </td>
 
@@ -80,8 +95,8 @@
             </tr>
         </table>
     </div>
-    <div >
-        <img  id="tryagain"  src="imgs/try.jpg" width="200" align="center" style="display: none">
+    <div>
+        <img id="tryagain" src="imgs/try.jpg" width="200" align="center" style="display: none">
     </div>
 
 
@@ -90,10 +105,10 @@
     </div>
 
     <div class="score" class="result" id="scoreOut">
-       
+
         <output>
-           
-            
+
+
         </output>
     </div>
 
@@ -103,7 +118,7 @@
 
 
             <font id="score" class="result"> </font>
-       
+
 
             <output>
                 <font id="bestscore" class="result"> </font>
@@ -111,25 +126,27 @@
         </div>
 
         <div class="result" id="gametime" align="left">
-        
 
-        <output>
-            <font id="finshtime" class="result"> </font>
-        </output>
+
+            <output>
+                <font id="finshtime" class="result"> </font>
+            </output>
         </div>
 
-<div id="exit" align="left">
-    <a href='../map.html'> <button>
-        <font size=5> Exit </font>
-    </button></a>
-</div>
+        <div id="exit" align="left">
+            <a href='../map.html'>
+                <button>
+                    <font size=5> Exit </font>
+                </button>
+            </a>
+        </div>
         <div id="achive" class="result">
-            <div >
+            <div>
                 <output>
                     <font id="achiv" size=5>Your Achievements </font>
                 </output>
             </div>
-<br>
+            <br>
             <div id="perfect">
                 <font size=3> Perfection : If we chase perfection we can catch excellence</font>
             </div>
@@ -140,21 +157,17 @@
     <br>
 
 
- 
+
     <br>
-    
- 
-    <audio id="sound1" src="newgamebutton.mp3" ></audio>
-    <audio  src="backgroundmusic.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
+
+
+    <audio id="sound1" src="newgamebutton.mp3"></audio>
+    <audio src="backgroundmusic.mp3" loop="true" autostart="true" autoplay="true"></audio>
 
 
 </body>
 <script src="cards.js">
-   
+
 </script>
 
 </html>
-
-
-
-

@@ -12,7 +12,7 @@
   transform-style: preserve-3d;
   transition: all 1.0s linear;
 }
-#f1_container:hover #f1_card {
+#f1_container  #f1_card.active {
   transform: rotateY(180deg);
 
 }
