@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--html lang="en"-->
+<html lang="en">
 
 <head>
     <link rel="stylesheet" href="level 1.css">
@@ -45,9 +45,9 @@
                     </td>
                     <td align="right">
                         <div>
-                            <font> points &nbsp; + </font>
+                            <font> points :</font>
                             <output>
-                                <font id="point"></font>
+                                <font id="point"> 100</font>
                             </output>
                         </div>
                     </td>
@@ -62,7 +62,7 @@
             <tr>
                 <td align="center">
 
-                    <img id="img1" class="gameImgs" src="cardback.jpg " width="200 "> 
+                    <img id="img1" class="gameImgs" value="PLAY"  onclick="play()" src="cardback.jpg " width="200 "> 
 
                 </td>
 
@@ -90,38 +90,31 @@
     </div>
 
     <div class="score" class="result" id="scoreOut">
-       
+        <font class="result"> Your score </font>
         <output>
-           
-            
+            <font id="score" class="result"> </font>
         </output>
     </div>
 
     <div class="score" class="result" id="bestOut">
 
         <div>
-
-
-            <font id="score" class="result"> </font>
-       
-
+            <font class="result" id=""> Best score  </font>
             <output>
                 <font id="bestscore" class="result"> </font>
             </output>
         </div>
-
         <div class="result" id="gametime" align="left">
-        
-
+        <font class="result"> your time  </font>
         <output>
             <font id="finshtime" class="result"> </font>
         </output>
         </div>
 
 <div id="exit" align="left">
-    <button>
+    <a href='../map.html'><button>
         <font size=5> Exit </font>
-    </button>
+    </button></a>
 </div>
         <div id="achive" class="result">
             <div >
@@ -139,20 +132,25 @@
 
     <br>
 
-
  
     <br>
     
  
-    <audio id="sound1" src="newgamebutton.mp3" ></audio>
-    <audio  src="backgroundmusic.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
+
 
 
 </body>
 <script src="cards.js">
    
-</script>
+   function play()
+  {
+       var audio = document.getElementById("img1");
+       audio.play();
+                 }
 
+</script>
+<audio id="img1" src="newgamebutton.mp3" ></audio>
+<embed src="backgroundmusic.mp3" loop="true"  autostart="true" autorun="true" hidden="true"></embed>
 </html>
 
 
