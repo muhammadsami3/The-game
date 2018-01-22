@@ -49,7 +49,20 @@ function ch_img(obj, src, index) {
 
     
 
+    
+
+
     return function () {
+
+
+        function PlaySound() {
+            var sound = document.getElementById("sound1");
+            var audio = new Audio(sound.src);
+            audio.play();
+            console.log("in");
+        }
+        PlaySound();
+       
         //if card is not correct
         if (!obj.correct) {
            
@@ -62,11 +75,8 @@ function ch_img(obj, src, index) {
                     obj.set_img(src);
                     viewed++;
 
+
                     
-                    function PlaySound(soundObj) {
-                        var sound = document.getElementById(soundObj);
-                        sound.Play();
-                    }
                     
                     //first card shown just save it
                     if (viewed == 1) {
@@ -74,8 +84,7 @@ function ch_img(obj, src, index) {
                         first_id = obj.id;
                         first_obj = obj
 
-                    
-                      
+                  
 
                     }
                      //if it's the second card shown
@@ -91,8 +100,7 @@ function ch_img(obj, src, index) {
                                 obj.correct = true;
                                 
                                 
-                                
-
+            
                                 
                                 how_many_checked += 2;
                                 points += 5;
