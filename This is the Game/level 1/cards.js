@@ -35,13 +35,10 @@ class cards {
         this.check = check
         this.correct = correct
     }
-
     set_img(new_src) {
         var img_id = document.getElementById(this.id)
         img_id.setAttribute('src', new_src)
         this.check = !this.check;
-        console.log(this.id);
-        
     }
 }
 
@@ -49,7 +46,15 @@ class cards {
 
 
 function ch_img(obj, src, index) {
+
+    
+
+    
+
+
     return function () {
+
+
         function PlaySound() {
             var sound = document.getElementById("sound1");
             var audio = new Audio(sound.src);
@@ -62,6 +67,7 @@ function ch_img(obj, src, index) {
         //if card is not correct
         if (!obj.correct) {
            
+
             //if it's not the same card
             if (obj.id != first_id) {
                 //if the shown less than 2 card
@@ -69,22 +75,33 @@ function ch_img(obj, src, index) {
 
                     obj.set_img(src);
                     viewed++;
+
+
+                    
                     
                     //first card shown just save it
                     if (viewed == 1) {
                         first_src = src;
                         first_id = obj.id;
                         first_obj = obj
+
+                  
+
                     }
                      //if it's the second card shown
                     if (viewed == 2) {
 
+                        
+                    
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
                                 first_obj.correct = true;
                                 var second_elem = document.getElementById(obj.id)
                                 obj.correct = true;
+                                
+                                
+            
                                 
                                 how_many_checked += 2;
                                 points += 5;
@@ -159,12 +176,7 @@ function ch_img(obj, src, index) {
                                 {
                                     clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
-                                    var fail = document.getElementsByClassName('fail')
-                                    for (var i = 0; i < fail.length; i++) {
-                                        fail[i].setAttribute('style',"display:block");
-                                    }
-                                  
-                            
+                                    document.getElementById("tryagain").setAttribute('style', "display:all");
                                 }
 
                             }
@@ -173,7 +185,7 @@ function ch_img(obj, src, index) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun,400);
+                        setTimeout(delay_fun, 100);
                     }
 
 
@@ -222,9 +234,8 @@ setTimeout(init_cards, 1500);
 i = 0;
 for (obj in obj_arr) 
     {
-    img_img1[i].addEventListener('click',ch_img(obj_arr[obj], img_arr[i], i));
+    img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i));
     i++
-    console.log(i);
     }
 
     function startCountdown() {//timer
@@ -234,7 +245,7 @@ for (obj in obj_arr)
         intervalHandle = setInterval(tick, 1000);
     }   
 
- 
+var timePadgeMargin = 0.5 * secondsRemaining;
 
     function tick() {
         // grab the h1
@@ -256,16 +267,9 @@ for (obj in obj_arr)
         // stop if down to zero
         if (secondsRemaining === 0) { /// checking
             document.getElementById("tableImg").setAttribute('style',"display:none");
-            // document.getElementById("tryagain").setAttribute('style',"display:block");
-            // document.getElementById("tryagain2").setAttribute('style', "display:block");
-            var fail = document.getElementsByClassName('fail')
-            for (var i = 0; i < fail.length; i++) {
-                fail[i].setAttribute('style', "display:block");
-            }
-
+            document.getElementById("tryagain").setAttribute('style',"display:all");
             clearInterval(intervalHandle);
         }
-        timePadgeMargin = 0.5 * minutes*60;
         if (secondsRemaining < timePadgeMargin)
         {
             timePadge=false;
@@ -273,6 +277,4 @@ for (obj in obj_arr)
         // subtract from seconds remaining
         secondsRemaining--;
     }
-
-
     
