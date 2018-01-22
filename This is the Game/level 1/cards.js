@@ -178,6 +178,9 @@ function ch_img(obj, src, index) {
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
                                     document.getElementById("tryagain").setAttribute('style', "display:all");
                                     document.getElementById("tryagain2").setAttribute('style', "display:block");
+                                    document.getElementById("exit").setAttribute('style', "display:block");
+                                    document.getElementById("GameMap").setAttribute('style', "display:block");
+                                    
                                 }
 
                             }

@@ -12,6 +12,7 @@ font {
 }
 
 
+
 /* level points */
 
 #top {
@@ -52,6 +53,7 @@ font {
     position: relative;
     left: 50%;
     width: 50%;
+    
     align-self: center;
     align-items: center;
 }
@@ -91,7 +93,7 @@ font {
     position: relative;
     left: 45%;
     width: 50%;
-    bottom: 50px;
+    bottom: 250px;
     align-self: center;
     align-items: center;
 }
@@ -103,7 +105,7 @@ font {
     position: relative;
     left: 45%;
     width: 50%;
-    bottom: 300px;
+    bottom: 500px;
     align-self: center;
     align-items: center;
 }
@@ -183,6 +185,7 @@ img {
 }
 
 .result {
+    bottom: 150px;
     display: none;
 }
 
@@ -198,15 +201,23 @@ img {
 }
 
 .tryagain2 {
-   
     position: relative;
     right: 10%;
-    width: 600px;
-    height: 405px;
+    width: 0px;
+    height: 150px;
 }
 
 #tryagain2 {
     display: none;
     width: 410px;
     height: 200px;
+}
+
+
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
 }
