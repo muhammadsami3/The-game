@@ -1,8 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
 var minutes=1.5;//timer
-var timePadge = true;
-var timePadgeMargin = 0.5 * (minutes*60);
 
 var two_right=0;
 var first_obj;
@@ -70,7 +68,12 @@ function ch_img(obj, src, index) {
                                 two_right++;
                                 if(two_right>=2)
                                 {
-                                        points+=(two_right-1)*5; 
+                                    if(two_right==2)
+                                    {
+                                        points+=2; 
+                                    }
+                                    else{points+=3;}
+                                    
                                 }
                                 points_par.innerText = points;
                                 //local storage
@@ -107,13 +110,9 @@ function ch_img(obj, src, index) {
                                     {
                                         document.getElementById("padge1").setAttribute('src',"padge/pergold.png")
                                     }
-                                    if(points>=maxscore)
+                                    if(points==maxscore)
                                     {
                                         document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
-                                    }
-                                    if(timePadge==true)
-                                    {
-                                        document.getElementById("padge2").setAttribute('src', "padge/timegold.png")   
                                     }
                                 }
 
@@ -194,7 +193,6 @@ for (obj in obj_arr)
         // every second, call the "tick" function
         intervalHandle = setInterval(tick, 1000);
     }   
-  
     function tick() {
         // grab the h1
         var timeDisplay = document.getElementById("time");
@@ -217,10 +215,6 @@ for (obj in obj_arr)
             document.getElementById("tableImg").setAttribute('style',"display:none");
             document.getElementById("tryagain").setAttribute('style',"display:all");
             clearInterval(intervalHandle);
-        }
-        if (secondsRemaining < timePadgeMargin)
-        {
-            timePadge=false;
         }
         // subtract from seconds remaining
         secondsRemaining--;

@@ -4,6 +4,9 @@ var minutes=0.1;//timer
 var timePadge = true;
 var timePadgeMargin;
 
+
+
+
 var two_right=0;
 var first_obj;
 var viewed = 0;
@@ -38,12 +41,20 @@ class cards {
         this.check = !this.check;
     }
 }
+
+
+
+
 function ch_img(obj, src, index) {
+
+    
 
     return function () {
         if(secondsRemaining>0){
         //if card is not correct
         if (!obj.correct) {
+           
+
             //if it's not the same card
             if (obj.id != first_id) {
                 //if the shown less than 2 card
@@ -51,27 +62,50 @@ function ch_img(obj, src, index) {
 
                     obj.set_img(src);
                     viewed++;
+
+                    
+                    function PlaySound(soundObj) {
+                        var sound = document.getElementById(soundObj);
+                        sound.Play();
+                    }
+                    
                     //first card shown just save it
                     if (viewed == 1) {
                         first_src = src;
                         first_id = obj.id;
                         first_obj = obj
+
+                    
+                      
+
                     }
                      //if it's the second card shown
                     if (viewed == 2) {
 
+                        
+                    
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
                                 first_obj.correct = true;
                                 var second_elem = document.getElementById(obj.id)
                                 obj.correct = true;
+                                
+                                
+                                
+
+                                
                                 how_many_checked += 2;
                                 points += 5;
                                 two_right++;
                                 if(two_right>=2)
                                 {
-                                    points+=(two_right - 1)*5;     
+                                    if(two_right==2)
+                                    {
+                                        points+=5; 
+                                    }
+                                    else{points+=3;}
+                                    
                                 }
                                 
                                 points_par.innerText =points;
@@ -111,7 +145,7 @@ function ch_img(obj, src, index) {
                                     {
                                         document.getElementById("padge1").setAttribute('src',"padge/pergold.png")
                                     }
-                                    if(points>=maxscore)
+                                    if(points==maxscore)
                                     {
                                         document.getElementById("padge3").setAttribute('src',"padge/goldenstar.png")
                                     }
@@ -155,6 +189,11 @@ function ch_img(obj, src, index) {
     }
     }
 }
+
+
+
+
+
 //function declartion ()
 //creating objects
 var c1 = new cards('img1', false, false);
@@ -195,7 +234,7 @@ for (obj in obj_arr)
         intervalHandle = setInterval(tick, 1000);
     }   
 
-var timePadgeMargin = 0.5 * (minutes*60);
+var timePadgeMargin = 0.5 * secondsRemaining;
 
     function tick() {
         // grab the h1
