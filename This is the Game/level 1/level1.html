@@ -151,7 +151,7 @@
             <td align="left">
                 <div id="exit" class="result fail">
                     <a href='../map.html'>
-                        <button id="2" onclick="play2()" class="welcome">
+                        <button id="2" value="PLAY"  onclick="play2()" class="welcome">
                             <font size=5> Exit </font>
                         </button>
                     </a>
@@ -164,7 +164,7 @@
             <td align="right" >
                 <div id="Next Level" class="result">
                     <a href='../map.html'>
-                        <button id="1" onclick="play()" class="welcome">
+                        <button id="1"  value="PLAY" onclick="play()" class="welcome">
                             <font size=5>Next</font>
                         </button>
                     </a>
@@ -175,7 +175,7 @@
             <td>
                 <div id="GameMap" align="right" class="result fail">
                     <a href='../map.html'>
-                        <button id="1" onclick="play()" class="welcome">
+                        <button id="1"  value="PLAY" onclick="play()" class="welcome">
                             <font size=5>Game Map</font>
                         </button>
                     </a>
@@ -208,13 +208,17 @@
  
     <audio id="sound1" src="button.mp3" ></audio>
     <audio id="sound2" src="gameover.wav" ></audio>
- <audio id="sound3" src="cheer.wav" ></audio>
+ <audio id="sound3" src="cheer.mp3" ></audio>
+ 
+ 
+ <audio id="1" src="button.mp3" ></audio>
+ <audio id="2" src="exit.wav" ></audio>
 
-    <audio  src="background.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
-
+    
+ <audio  src="background.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
     <br>
 
-</body>
+
 <script src="cards.js">
 
 function play()
@@ -223,12 +227,15 @@ function play()
        audio.play();
                  }
 
+
                  function play2()
   {
        var audio = document.getElementById("2");
        audio.play();
                  }
 
-</script>
+                 
 
+</script>
+</body>
 </html>
