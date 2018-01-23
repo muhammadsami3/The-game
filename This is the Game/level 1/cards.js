@@ -27,6 +27,7 @@ function shuffleArray(img_arr) {
 }
 var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
 var hearts = ['hearts.png', 'hearts1.png', 'hearts2.png','hearts3.png'];
+var card =['card1','card2','card3','card4']
 
 shuffleArray(img_arr);
 class cards {
@@ -40,8 +41,6 @@ class cards {
         var img_id = document.getElementById(this.id)
         img_id.setAttribute('src', new_src)
         this.check = !this.check;
-        console.log(this.id);
-        
     }
 }
 
@@ -52,7 +51,6 @@ function ch_img(obj, src, index,activeImg) {
             var sound = document.getElementById("sound1");
             var audio = new Audio(sound.src);
             audio.play();
-            console.log("in");
         }
         PlaySound();
         if(secondsRemaining>0){
@@ -207,11 +205,13 @@ function init_cards() {
 setTimeout(init_cards, 1500);
 //add listener
 i = 0;
+var active=[];
 for (obj in obj_arr) 
     {
-    img_img1[i].addEventListener('click',ch_img(obj_arr[obj], img_arr[i], i));
+        active[i]=document.getElementById(card[i]);
+    img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i,active[i]));
     i++
-    console.log(i);
+   
     }
 
     function startCountdown() {//timer
