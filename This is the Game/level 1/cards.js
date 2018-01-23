@@ -1,6 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=20;//timer
+var minutes=.05;//timer
 var timePadge = true;
 var timePadgeMargin;
 
@@ -27,7 +27,6 @@ function shuffleArray(img_arr) {
 }
 var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
 var hearts = ['hearts.png', 'hearts1.png', 'hearts2.png','hearts3.png'];
-var card =['card1','card2','card3','card4']
 
 shuffleArray(img_arr);
 class cards {
@@ -36,30 +35,26 @@ class cards {
         this.check = check
         this.correct = correct
     }
+
     set_img(new_src) {
         var img_id = document.getElementById(this.id)
         img_id.setAttribute('src', new_src)
         this.check = !this.check;
+        console.log(this.id);
+        
     }
 }
 
 
 
 
-function ch_img(obj, src, index,activeImg) {
-
-    
-
-    
-
-
+function ch_img(obj, src, index) {
     return function () {
-
-
         function PlaySound() {
             var sound = document.getElementById("sound1");
             var audio = new Audio(sound.src);
             audio.play();
+            console.log("in");
         }
         PlaySound();
        
@@ -67,43 +62,29 @@ function ch_img(obj, src, index,activeImg) {
         //if card is not correct
         if (!obj.correct) {
            
-
             //if it's not the same card
             if (obj.id != first_id) {
                 //if the shown less than 2 card
                 if (viewed < 2) {
-                    activeImg.classList.add('active');
-                    console.log(activeImg);
+
                     obj.set_img(src);
-
                     viewed++;
-
-
-                    
                     
                     //first card shown just save it
                     if (viewed == 1) {
                         first_src = src;
                         first_id = obj.id;
                         first_obj = obj
-
-                  
-
                     }
                      //if it's the second card shown
                     if (viewed == 2) {
 
-                        
-                    
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
                                 first_obj.correct = true;
                                 var second_elem = document.getElementById(obj.id)
                                 obj.correct = true;
-                                
-                                
-            
                                 
                                 how_many_checked += 2;
                                 points += 5;
@@ -180,9 +161,10 @@ function ch_img(obj, src, index,activeImg) {
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
                                     var fail = document.getElementsByClassName('fail')
                                     for (var i = 0; i < fail.length; i++) {
-                                        fail[i].setAttribute('style', "display:block");
+                                        fail[i].setAttribute('style',"display:block");
                                     }
-
+                                  
+                                    document.getElementById("scoreOut").setAttribute('style', 'height:0px');
                                 }
 
                             }
@@ -191,7 +173,7 @@ function ch_img(obj, src, index,activeImg) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun, 500);
+                        setTimeout(delay_fun,400);
                     }
 
 
@@ -219,6 +201,7 @@ var obj_arr = { obj1: c1, obj2: c2, obj3: c3, obj4: c4 }
 var img_img1 = document.getElementsByClassName('gameImgs');
 var i = 0
 var obj;
+
 //showing cards
 for (obj in obj_arr) {
     obj_arr[obj].set_img(img_arr[i]);
@@ -230,18 +213,18 @@ function init_cards() {
     for (obj1 in obj_arr) {
         obj_arr[obj1].set_img("cardback.jpg");
     }
+
     startCountdown();//timer
 }
+
 setTimeout(init_cards, 1500);
 //add listener
 i = 0;
-var active=[];
 for (obj in obj_arr) 
     {
-        active[i]=document.getElementById(card[i]);
-        img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i,active[i]));
-    
+    img_img1[i].addEventListener('click',ch_img(obj_arr[obj], img_arr[i], i));
     i++
+    console.log(i);
     }
 
     function startCountdown() {//timer
@@ -251,7 +234,7 @@ for (obj in obj_arr)
         intervalHandle = setInterval(tick, 1000);
     }   
 
-var timePadgeMargin = 0.5 * secondsRemaining;
+ 
 
     function tick() {
         // grab the h1
@@ -276,10 +259,12 @@ var timePadgeMargin = 0.5 * secondsRemaining;
             var fail = document.getElementsByClassName('fail')
             for (var i = 0; i < fail.length; i++) {
                 fail[i].setAttribute('style', "display:block");
-            }
 
+            }
+            document.getElementById("scoreOut").setAttribute('style','height:0px');
             clearInterval(intervalHandle);
         }
+        timePadgeMargin = 0.5 * minutes*60;
         if (secondsRemaining < timePadgeMargin)
         {
             timePadge=false;
@@ -287,4 +272,6 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         // subtract from seconds remaining
         secondsRemaining--;
     }
+
+
     
