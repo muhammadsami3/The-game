@@ -1,6 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=0.1;//timer
+var minutes=0.6;//timer
 var timePadge = true;
 var timePadgeMargin;
 
@@ -43,68 +43,40 @@ class cards {
     }
 }
 
-
-
-
 function ch_img(obj, src, index,activeImg) {
-
-    
-
-    
-
-
     return function () {
-
-
         function PlaySound() {
+            var activeImg1="";
             var sound = document.getElementById("sound1");
             var audio = new Audio(sound.src);
             audio.play();
         }
         PlaySound();
-       
         if(secondsRemaining>0){
         //if card is not correct
         if (!obj.correct) {
-           
-
             //if it's not the same card
             if (obj.id != first_id) {
                 //if the shown less than 2 card
                 if (viewed < 2) {
                     activeImg.classList.add('active');
-                    console.log(activeImg);
                     obj.set_img(src);
-
                     viewed++;
-
-
-                    
-                    
                     //first card shown just save it
                     if (viewed == 1) {
                         first_src = src;
                         first_id = obj.id;
-                        first_obj = obj
-
-                  
-
+                        first_obj = obj;
+                        activeImg1=activeImg;
                     }
                      //if it's the second card shown
                     if (viewed == 2) {
-
-                        
-                    
                         var delay_fun = function () {
                             if (first_src == src) {
                                 var first_elem = document.getElementById(first_id)
                                 first_obj.correct = true;
                                 var second_elem = document.getElementById(obj.id)
-                                obj.correct = true;
-                                
-                                
-            
-                                
+                                obj.correct = true; 
                                 how_many_checked += 2;
                                 points += 5;
                                 two_right++;
@@ -119,15 +91,12 @@ function ch_img(obj, src, index,activeImg) {
                                 }
                                 
                                 points_par.innerText =points;
-
-
                                 //local storage
                                 if (localStorage.getItem("max_points1") < points) 
                                     {
                                     localStorage.setItem("max_points1", points)
                                     }
                                 document.getElementById("bestscore").innerText ="Best Score is : " +localStorage.getItem("max_points1")
-
                                 //level complete
                                 if(how_many_checked==img_arr.length)
                                 {
@@ -150,7 +119,6 @@ function ch_img(obj, src, index,activeImg) {
                                     {
                                         result[i].style.display="block";
                                     }
-                                    
                                     if (heartslost==0)
                                     {
                                         document.getElementById("padge1").setAttribute('src',"padge/pergold.png")
@@ -169,9 +137,10 @@ function ch_img(obj, src, index,activeImg) {
                                 two_right=0;
                                 var first_elem = document.getElementById(first_id)
                                 first_elem.setAttribute('src', 'cardback.jpg')
-
                                 var second_elem = document.getElementById(obj.id)
                                 second_elem.setAttribute('src', 'cardback.jpg')
+                                activeImg.classList.remove('active');
+                                activeImg1.classList.remove('active');
                                 heartslost++;
                                 document.getElementById("heartImg").setAttribute('src',hearts[heartslost]);
                                 if (heartslost==3)
@@ -189,9 +158,6 @@ function ch_img(obj, src, index,activeImg) {
                         }
                         setTimeout(delay_fun, 500);
                     }
-
-
-                
             }
 
             }
@@ -199,11 +165,6 @@ function ch_img(obj, src, index,activeImg) {
     }
     }
 }
-
-
-
-
-
 //function declartion ()
 //creating objects
 var c1 = new cards('img1', false, false);
@@ -216,15 +177,19 @@ var img_img1 = document.getElementsByClassName('gameImgs');
 var i = 0
 var obj;
 //showing cards
+var intial=document.getElementsByClassName("flip")
 for (obj in obj_arr) {
+    intial[i].classList.add("active");
     obj_arr[obj].set_img(img_arr[i]);
     i++;
 }
 //closing cards 
 function init_cards() {
-    var obj1;
+    var obj1,i=0;
     for (obj1 in obj_arr) {
-        obj_arr[obj1].set_img("cardback.jpg");
+        // obj_arr[obj1].set_img("cardback.jpg");
+        intial[i].classList.remove("active");
+        i++;
     }
     startCountdown();//timer
 }
@@ -278,5 +243,4 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         }
         // subtract from seconds remaining
         secondsRemaining--;
-    }
-    
+    } 
