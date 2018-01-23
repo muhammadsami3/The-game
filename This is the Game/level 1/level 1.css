@@ -14,7 +14,6 @@ font {
 
 /* level points */
 
-
 #div2 {
     width: 100%;
     align-self: center;
@@ -24,6 +23,7 @@ font {
     height: 5px;
     width: 100%;
 }
+
 #buttons {
     width: 100%
 }
@@ -34,27 +34,18 @@ font {
     width: 50%;
 }
 
-
 #tablefail {
     position: relative;
     left: 25%;
     width: 50%;
 }
 
-#levelcomimg {
-    height: 200px;
-    width: 300px;
-    position: relative;
-    left: 50%;
-    width: 50%;
-    align-self: center;
-    align-items: center;
-}
 
 #levelcomimg {
     height: 220px;
     position: relative;
     left: 25%;
+    width: 50%;
 }
 
 #img_comp {
@@ -69,10 +60,9 @@ font {
 
 #scoreOut {
     position: relative;
-    left: 40%;
+    left: 43%;
     height: 200px;
 }
-
 
 #hearts {
     vertical-align: 0px;
