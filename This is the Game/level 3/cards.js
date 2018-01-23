@@ -94,11 +94,11 @@ function ch_img(obj, src, index,activeImg) {
                                 
                                 points_par.innerText =points;
                                 //local storage
-                                if (localStorage.getItem("max_points1") < points) 
+                                if (localStorage.getItem("max_points3") < points) 
                                     {
-                                    localStorage.setItem("max_points1", points)
+                                    localStorage.setItem("max_points3", points)
                                     }
-                                document.getElementById("bestscore").innerText ="Best Score is : " +localStorage.getItem("max_points1")
+                                document.getElementById("bestscore").innerText ="Best Score is : " +localStorage.getItem("max_points3")
                                 //level complete
                                 if(how_many_checked==img_arr.length)
                                 {
