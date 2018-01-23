@@ -259,11 +259,4 @@ for (obj in obj_arr)
         }
         // subtract from seconds remaining
         secondsRemaining--;
-<<<<<<< HEAD
     } 
-=======
-    }
-
-
-    
->>>>>>> 9c44b39c624fc9a713bd0e1fb2c19dc3fd192402
