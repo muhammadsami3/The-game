@@ -1,6 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=60;//timer
+var minutes=.5;//timer
 var timePadge = true;
 var timePadgeMargin;
 
@@ -163,7 +163,7 @@ function ch_img(obj, src, index,activeImg) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun,400);
+                        setTimeout(delay_fun,800);
                     }
             }
 
@@ -211,7 +211,7 @@ function init_cards() {
     startCountdown();//timer
 }
 
-setTimeout(init_cards, 1500);
+setTimeout(init_cards, 2500);
 //add listener
 i = 0;
 var active=[];
