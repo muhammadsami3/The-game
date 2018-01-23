@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--html lang="en"-->
 
 <head>
     <link rel="stylesheet" href="level 1.css">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" >
     <title>Level 1</title>
 </head>
 
+
 <body>
 
-    <div id="div1">
+    <div id="div1" >
         <div id="top">
-            <table id="table1" >
+            <table id="table1">
                 <tr>
-                    <td align="left">
+                    <td align="center">
                         <div>
                             <font size=8>Level 1</font>
                         </div>
@@ -27,23 +28,23 @@
                         <h1 id="time">0:00</h1>
                     </td>
                     <td align="right">
-                        <div  class="padge">
+                        <div class="padge">
                             <img id="padge1" class="padge" src="padge/perblack.png"> </td>
                     </div>
                     </td>
 
                     <td align="center">
-                        <div  class="padge">
+                        <div class="padge">
                             <img id="padge2" class="padge" src="padge/timeblack.png">
                         </div>
                     </td>
 
                     <td align="left">
-                        <div  align="right" class="padge">
+                        <div align="right" class="padge">
                             <img id="padge3" class="padge" src="padge/blackstar.png">
                         </div>
                     </td>
-                    <td align="right">
+                    <td align="center">
                         <div>
                             <font> points &nbsp; + </font>
                             <output>
@@ -57,32 +58,81 @@
     </div>
     <br>
 
+<div id="table3">
+
+    <table id="tablefail" class="fail" >
+        <tr>
+            <td align="center">
+                <div class="tryagain">
+
+                    <input id="tryagain" class="fail" type="image" src="tryagain.png" onClick="window.location.reload()">
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <div>
+                    <input type="image" class="fail" src="tryagain2.png">
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    
+
     <div id="table2">
         <table id="tableImg">
             <tr>
                 <td align="center">
 
-                    <img id="img1" class="gameImgs" value="PLAY"  onclick="play()" src="cardback.jpg " width="200 "> 
+                    <section class="container">
+                        <div id="card1" class="flip">
+                            <img id="1" class="gameImgs front" src="cardback.jpg" width="200">
+                            <img id="img1" class="1 back" src="cardback.jpg" width="200">
+                        </div>
+                    </section>
 
                 </td>
 
                 <td align="center">
-                    <img id="img2" class="gameImgs" src="cardback.jpg" width="200">
+                    <section class="container">
+                        <div id="card2" class="flip">
+                            <img id="1" class="gameImgs front" src="cardback.jpg" width="200">
+                            <img id="img2" class="1 back" src="cardback.jpg" width="200">
+                        </div>
+                    </section>
                 </td>
             </tr>
             <tr>
                 <td align="center">
-                    <img id="img3" class="gameImgs" src="cardback.jpg" width="200 ">
+                    <section class="container">
+                        <div id="card3" class="flip">
+                            <img id="1" class="gameImgs front" src="cardback.jpg" width="200">
+                            <img id="img3" class="1 back" src="cardback.jpg" width="200">
+                        </div>
+                    </section>
                 </td>
                 <td align="center">
-                    <img id="img4" class="gameImgs" src="cardback.jpg" width="200">
+                    <section class="container">
+                        <div id="card4" class="flip">
+                            <img id="1" class="gameImgs front" src="cardback.jpg" width="200">
+                            <img id="img4" class="1 back" src="cardback.jpg" width="200">
+                        </div>
+                    </section>
+
                 </td>
+
             </tr>
         </table>
-    </div>
-    <div >
-        <img  id="tryagain"  src="imgs/try.jpg" width="200" align="center" style="display: none">
-    </div>
+      
+        
+        </div>
+
+
+    
+
+
 
 
     <div id="levelcomimg" class="result">
@@ -90,10 +140,10 @@
     </div>
 
     <div class="score" class="result" id="scoreOut">
-       
+
         <output>
-           
-            
+
+
         </output>
     </div>
 
@@ -103,7 +153,7 @@
 
 
             <font id="score" class="result"> </font>
-       
+
 
             <output>
                 <font id="bestscore" class="result"> </font>
@@ -111,19 +161,28 @@
         </div>
 
         <div class="result" id="gametime" align="left">
-        
 
-        <output>
-            <font id="finshtime" class="result"> </font>
-        </output>
+
+            <output>
+                <font id="finshtime" class="result"> </font>
+            </output>
         </div>
 
-<div id="exit" align="left">
-    <button>
-        <font size=5> Exit </font>
-    </button>
-</div>
-        <div id="achive" class="result">
+        <div id="exit" align="left" class="result fail">
+            <a href='../map.html'>
+                <button>
+                    <font size=5> Exit </font>
+                </button>
+            </a>
+        </div>
+        <div id="GameMap" align="right" class="result fail">
+            <a href='../map.html'>
+                <button>
+                    <font size=5>Game Map</font>
+                </button>
+            </a>
+        </div>
+        <!-- <div id="achive" class="result">
             <div >
                 <output>
                     <font id="achiv" size=5>Your Achievements </font>
@@ -137,30 +196,20 @@
 
     </div>
 
-    <br>
+    <br> -->
 
 
- 
-    <br>
-    
- 
 
+        <br>
+
+
+        <audio id="sound1" src="newgamebutton.mp3"></audio>
+        <audio src="backgroundmusic.mp3" loop="true" autostart="true" autoplay="true"></audio>
 
 
 </body>
 <script src="cards.js">
-   
-   function play()
-  {
-       var audio = document.getElementById("img1");
-       audio.play();
-                 }
 
 </script>
-<audio id="img1" src="newgamebutton.mp3" ></audio>
-<embed src="backgroundmusic.mp3" loop="true"  autostart="true" autorun="true" hidden="true"></embed>
+
 </html>
-
-
-
-

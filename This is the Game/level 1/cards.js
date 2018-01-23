@@ -1,6 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=0.1;//timer
+var minutes=20;//timer
 var timePadge = true;
 var timePadgeMargin;
 
@@ -27,6 +27,7 @@ function shuffleArray(img_arr) {
 }
 var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
 var hearts = ['hearts.png', 'hearts1.png', 'hearts2.png','hearts3.png'];
+var card =['card1','card2','card3','card4']
 
 shuffleArray(img_arr);
 class cards {
@@ -45,11 +46,23 @@ class cards {
 
 
 
-function ch_img(obj, src, index) {
+function ch_img(obj, src, index,activeImg) {
 
     
 
+    
+
+
     return function () {
+
+
+        function PlaySound() {
+            var sound = document.getElementById("sound1");
+            var audio = new Audio(sound.src);
+            audio.play();
+        }
+        PlaySound();
+       
         if(secondsRemaining>0){
         //if card is not correct
         if (!obj.correct) {
@@ -59,15 +72,14 @@ function ch_img(obj, src, index) {
             if (obj.id != first_id) {
                 //if the shown less than 2 card
                 if (viewed < 2) {
-
+                    activeImg.classList.add('active');
+                    console.log(activeImg);
                     obj.set_img(src);
+
                     viewed++;
 
+
                     
-                    function PlaySound(soundObj) {
-                        var sound = document.getElementById(soundObj);
-                        sound.Play();
-                    }
                     
                     //first card shown just save it
                     if (viewed == 1) {
@@ -75,8 +87,7 @@ function ch_img(obj, src, index) {
                         first_id = obj.id;
                         first_obj = obj
 
-                    
-                      
+                  
 
                     }
                      //if it's the second card shown
@@ -92,8 +103,7 @@ function ch_img(obj, src, index) {
                                 obj.correct = true;
                                 
                                 
-                                
-
+            
                                 
                                 how_many_checked += 2;
                                 points += 5;
@@ -168,7 +178,11 @@ function ch_img(obj, src, index) {
                                 {
                                     clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
-                                    document.getElementById("tryagain").setAttribute('style', "display:all");
+                                    var fail = document.getElementsByClassName('fail')
+                                    for (var i = 0; i < fail.length; i++) {
+                                        fail[i].setAttribute('style', "display:block");
+                                    }
+
                                 }
 
                             }
@@ -177,7 +191,7 @@ function ch_img(obj, src, index) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun, 100);
+                        setTimeout(delay_fun, 500);
                     }
 
 
@@ -221,9 +235,12 @@ function init_cards() {
 setTimeout(init_cards, 1500);
 //add listener
 i = 0;
+var active=[];
 for (obj in obj_arr) 
     {
-    img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i));
+        active[i]=document.getElementById(card[i]);
+        img_img1[i].addEventListener('click', ch_img(obj_arr[obj], img_arr[i], i,active[i]));
+    
     i++
     }
 
@@ -256,7 +273,11 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         // stop if down to zero
         if (secondsRemaining === 0) { /// checking
             document.getElementById("tableImg").setAttribute('style',"display:none");
-            document.getElementById("tryagain").setAttribute('style',"display:all");
+            var fail = document.getElementsByClassName('fail')
+            for (var i = 0; i < fail.length; i++) {
+                fail[i].setAttribute('style', "display:block");
+            }
+
             clearInterval(intervalHandle);
         }
         if (secondsRemaining < timePadgeMargin)
