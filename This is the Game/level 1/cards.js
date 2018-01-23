@@ -25,7 +25,7 @@ function shuffleArray(img_arr) {
         [img_arr[i], img_arr[j]] = [img_arr[j], img_arr[i]];
     }
 }
-var img_arr = ['imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg'];
+var img_arr = ['imgs/pic1.jpg', 'imgs/pic1.jpg', 'imgs/pic10.jpg', 'imgs/pic10.jpg'];
 var hearts = ['hearts.png', 'hearts1.png', 'hearts2.png','hearts3.png'];
 var card =['card1','card2','card3','card4']
 
