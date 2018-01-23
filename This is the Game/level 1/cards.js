@@ -53,6 +53,7 @@ function ch_img(obj, src, index,activeImg) {
             audio.play();
         }
         PlaySound();
+
         if(secondsRemaining>0){
         //if card is not correct
         if (!obj.correct) {
@@ -148,6 +149,17 @@ function ch_img(obj, src, index,activeImg) {
                                 //if all hearts lost
                                 if (heartslost==3)
                                 {
+
+                                    
+                                            function PlaySound() {
+                                                var activeImg1="";
+                                                var sound = document.getElementById("sound2");
+                                                var audio = new Audio(sound.src);
+                                                audio.play();
+                                            }
+                                            PlaySound();
+
+
                                     clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
                                     var fail = document.getElementsByClassName('fail')
@@ -242,14 +254,26 @@ for (obj in obj_arr)
         timeDisplay.innerHTML = message;
         
         // stop if time down to zero
-        if (secondsRemaining === 0) { /// checking
+        if (secondsRemaining === 0) { 
+            
+            
+                    function PlaySound() {
+                        var activeImg1="";
+                        var sound = document.getElementById("sound2");
+                        var audio = new Audio(sound.src);
+                        audio.play();
+                    }
+                    PlaySound();
+            
+            
+            /// checking
             document.getElementById("tableImg").setAttribute('style',"display:none");
             var fail = document.getElementsByClassName('fail')
             for (var i = 0; i < fail.length; i++) {
                 fail[i].setAttribute('style', "display:block");
 
             }
-            
+
             document.getElementById("scoreOut").setAttribute('style','height:0px');
             clearInterval(intervalHandle);
         }
