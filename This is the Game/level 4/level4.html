@@ -263,9 +263,9 @@
             <td align="left">
                 <div id="exit" class="result fail">
                     <a href='../map.html'>
-                        <button>
-                            <font size=5> Exit </font>
-                        </button>
+                        <button id="2" value="PLAY"  onclick="play2()" class="welcome">
+                                <font size=5> Exit </font>
+                            </button>
                     </a>
                 </div>
             </td>
@@ -276,9 +276,9 @@
             <td align="right" >
                 <div id="Next Level" class="result">
                     <a href='../map.html'>
-                        <button>
-                            <font size=5>Next</font>
-                        </button>
+                        <button id="1"  value="PLAY" onclick="play()" class="welcome">
+                                <font size=5>Next</font>
+                            </button>
                     </a>
                 </div>
             
@@ -287,9 +287,9 @@
             <td>
                 <div id="GameMap" align="right" class="result fail">
                     <a href='../map.html'>
-                        <button>
-                            <font size=5>Game Map</font>
-                        </button>
+                        <button id="1"  value="PLAY" onclick="play()" class="welcome">
+                                <font size=5>Game Map</font>
+                            </button>
                     </a>
                 </div>
             </td>
@@ -318,14 +318,36 @@
     <br>
     
  
-    <audio id="sound1" src="newgamebutton.mp3" ></audio>
-    <audio  src="background.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
+    <audio id="sound1" src="button.mp3" ></audio>
+    <audio id="sound2" src="gameover.wav" ></audio>
+ <audio id="sound3" src="cheer.mp3" ></audio>
+ 
+ 
+ <audio id="1" src="button.mp3" ></audio>
+ <audio id="2" src="exit.wav" ></audio>
 
+    
+ <audio  src="background.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
     <br>
 
-</body>
+
 <script src="cards.js">
 
-</script>
+function play()
+  {
+       var audio = document.getElementById("1");
+       audio.play();
+                 }
+play();
 
+                 function play2()
+  {
+       var audio = document.getElementById("2");
+       audio.play();
+                 }
+play2();
+                 
+
+</script>
+</body>
 </html>
