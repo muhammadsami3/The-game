@@ -144,6 +144,8 @@ function ch_img(obj, src, index,activeImg) {
                                 activeImg1.classList.remove('active');
                                 heartslost++;
                                 document.getElementById("heartImg").setAttribute('src',hearts[heartslost]);
+                                
+                                //if all hearts lost
                                 if (heartslost==3)
                                 {
                                     clearInterval(intervalHandle);
@@ -162,7 +164,7 @@ function ch_img(obj, src, index,activeImg) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun,400);
+                        setTimeout(delay_fun,800);
                     }
             }
 
@@ -194,7 +196,6 @@ for (obj in obj_arr) {
 function init_cards() {
     var obj1,i=0;
     for (obj1 in obj_arr) {
-        // obj_arr[obj1].set_img("cardback.jpg");
         intial[i].classList.remove("active");
         i++;
     }
@@ -240,7 +241,7 @@ for (obj in obj_arr)
         // now change the display
         timeDisplay.innerHTML = message;
         
-        // stop if down to zero
+        // stop if time down to zero
         if (secondsRemaining === 0) { /// checking
             document.getElementById("tableImg").setAttribute('style',"display:none");
             var fail = document.getElementsByClassName('fail')
@@ -248,6 +249,7 @@ for (obj in obj_arr)
                 fail[i].setAttribute('style', "display:block");
 
             }
+            
             document.getElementById("scoreOut").setAttribute('style','height:0px');
             clearInterval(intervalHandle);
         }
