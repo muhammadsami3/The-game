@@ -162,7 +162,7 @@ function ch_img(obj, src, index,activeImg) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun,400);
+                        setTimeout(delay_fun,700);
                     }
             }
 
