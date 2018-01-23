@@ -44,14 +44,18 @@ class cards {
     }
 }
 
+
+function PlaySound() {
+    var activeImg1="";
+    var sound = document.getElementById("sound1");
+    var audio = new Audio(sound.src);
+    audio.play();
+}
+
+
 function ch_img(obj, src, index,activeImg) {
     return function () {
-        function PlaySound() {
-            var activeImg1="";
-            var sound = document.getElementById("sound1");
-            var audio = new Audio(sound.src);
-            audio.play();
-        }
+       
         PlaySound();
 
         if(secondsRemaining>0){
@@ -116,9 +120,26 @@ function ch_img(obj, src, index,activeImg) {
                                     document.getElementById("finshtime").innerHTML = "Your Time is : "+ message;
                                     document.getElementById("tableImg").setAttribute('style',"display:none")
                                   
+
+
+                                   
+
+
+
                                     var result=document.getElementsByClassName('result')
                                     for(var i=0; i< result.length; i++)
                                     {
+
+
+                                        function PlaySound() {
+                                            var activeImg1="";
+                                            var sound = document.getElementById("sound3");
+                                            var audio = new Audio(sound.src);
+                                            audio.play();
+                                        }
+                                        PlaySound();
+
+
                                         result[i].style.display="block";
                                     }
                                     if (heartslost==0)
