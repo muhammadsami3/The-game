@@ -1,0 +1,48 @@
+<html>
+
+<head>
+
+    <title> Welcome </title>
+    <link rel="stylesheet" type=" text/css" href="welcom.css">
+</head>
+
+<body>
+    <button id="1"  value="PLAY"  onclick="play()" class="welcome"> New </button>
+    <br>
+    <button id="2" value="PLAY"  onclick="play2()" class="welcome"> Exit </button>
+    <br>
+
+
+    <script>
+  function play()
+  {
+       var audio = document.getElementById("New");
+       audio.play();
+                 }
+
+                 function play2()
+  {
+       var audio = document.getElementById("Exit");
+       audio.play();
+                 }
+
+   </script>
+
+
+<audio id="New" src="newgamebutton.mp3" ></audio>
+<audio id="Exit" src="exit.wav" ></audio>
+
+<embed id="New" src="backgroundmusic.mp3" autostart="true" hidden="true"></embed>
+
+
+
+
+
+    
+
+</body>
+
+</html>
+
+
+
