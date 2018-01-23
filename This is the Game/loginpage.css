@@ -1,4 +1,10 @@
 
+body {
+    background-image: url("animated-bird-image-0461 (2).gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 button
 {
     color: 	#808080;
