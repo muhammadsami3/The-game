@@ -151,7 +151,7 @@
             <td align="left">
                 <div id="exit" class="result fail">
                     <a href='../map.html'>
-                        <button>
+                        <button id="2" onclick="play2()" class="welcome">
                             <font size=5> Exit </font>
                         </button>
                     </a>
@@ -164,7 +164,7 @@
             <td align="right" >
                 <div id="Next Level" class="result">
                     <a href='../map.html'>
-                        <button>
+                        <button id="1" onclick="play()" class="welcome">
                             <font size=5>Next</font>
                         </button>
                     </a>
@@ -175,7 +175,7 @@
             <td>
                 <div id="GameMap" align="right" class="result fail">
                     <a href='../map.html'>
-                        <button>
+                        <button id="1" onclick="play()" class="welcome">
                             <font size=5>Game Map</font>
                         </button>
                     </a>
@@ -206,13 +206,27 @@
     <br>
     
  
-    <audio id="sound1" src="newgamebutton.mp3" ></audio>
+    <audio id="sound1" src="button.wav" ></audio>
+    <audio id="sound2" src="gameover.wav" ></audio>
+
     <audio  src="background.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
 
     <br>
 
 </body>
 <script src="cards.js">
+
+function play()
+  {
+       var audio = document.getElementById("1");
+       audio.play();
+                 }
+
+                 function play2()
+  {
+       var audio = document.getElementById("2");
+       audio.play();
+                 }
 
 </script>
 
