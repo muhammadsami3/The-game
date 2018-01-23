@@ -6,8 +6,6 @@ body {
     /* background-size: 1550px 700px; */
 }
 
-
-
 font {
     font-family: fantasy;
     font-style: italic;
@@ -17,12 +15,13 @@ font {
 
 /* level points */
 
-#top {
+
+/* #top {
     bottom: 0px;
     height: 5%;
     width: 100%;
     left: 0%;
-}
+} */
 
 #div2 {
     width: 100%;
@@ -34,31 +33,36 @@ font {
     width: 100%;
 }
 
-#table2 {
+
+/* #table2 {
     align-content: center;
+} */
+
+#buttons {
+    width: 100%
 }
 
 #tableImg {
     position: relative;
     left: 25%;
     width: 50%;
-    align-self: center;
 }
 
-#table3 {
+
+/* #table3 {
     align-content: center;
-}
+} */
 
 #tablefail {
     position: relative;
     left: 25%;
     width: 50%;
-    align-self: center;
 }
 
-#result_table {
+
+/* #result_table {
     position: relative;
-}
+} */
 
 #levelcomimg {
     height: 200px;
@@ -70,22 +74,10 @@ font {
     align-items: center;
 }
 
-.score {
-    position: relative;
-    left: 25%;
-    width: 50%;
-    align-self: center;
-    align-items: center;
-}
-
 #levelcomimg {
-    height: 300px;
-    width: 1000px;
+    height: 220px;
     position: relative;
     left: 25%;
-    width: 50%;
-    align-self: center;
-    align-items: center;
 }
 
 #img_comp {
@@ -100,16 +92,12 @@ font {
 
 #scoreOut {
     position: relative;
-    height: 300px;
-    width: 300px;
-    position: relative;
-    left: 45%;
-    width: 50%;
-    bottom: 220px;
-    align-self: center;
-    align-items: center;
+    left: 40%;
+    height: 200px;
 }
 
+
+/* 
 #bestOut {
     position: relative;
     height: 300px;
@@ -120,7 +108,7 @@ font {
     bottom: 500px;
     align-self: center;
     align-items: center;
-}
+} */
 
 #hearts {
     vertical-align: 0px;
@@ -171,17 +159,22 @@ img {
     width: 200px;
 }
 
-#exit {
+
+/* #exit {
     position: relative;
-    top: 25%;
-    right: 90%;
+    bottom: 550px;
+}
+
+#GameMap {
+    position: relative;
+    bottom: 625px;
 }
 
 #achive {
     position: relative;
     top: 30%;
     right: 90%;
-}
+} */
 
 #points {
     text-align: right;
@@ -197,7 +190,6 @@ img {
 }
 
 .result {
-    bottom: 150px;
     display: none;
 }
 
