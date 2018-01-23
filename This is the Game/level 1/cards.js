@@ -162,7 +162,7 @@ function ch_img(obj, src, index,activeImg) {
                             first_src = "";
                             first_id = "";
                         }
-                        setTimeout(delay_fun,400);
+                        setTimeout(delay_fun,800);
                     }
             }
 
@@ -194,7 +194,6 @@ for (obj in obj_arr) {
 function init_cards() {
     var obj1,i=0;
     for (obj1 in obj_arr) {
-        // obj_arr[obj1].set_img("cardback.jpg");
         intial[i].classList.remove("active");
         i++;
     }

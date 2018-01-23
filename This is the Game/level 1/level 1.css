@@ -3,7 +3,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* background-size: 1550px 700px; */
 }
 
 font {
@@ -16,13 +15,6 @@ font {
 /* level points */
 
 
-/* #top {
-    bottom: 0px;
-    height: 5%;
-    width: 100%;
-    left: 0%;
-} */
-
 #div2 {
     width: 100%;
     align-self: center;
@@ -32,12 +24,6 @@ font {
     height: 5px;
     width: 100%;
 }
-
-
-/* #table2 {
-    align-content: center;
-} */
-
 #buttons {
     width: 100%
 }
@@ -49,20 +35,11 @@ font {
 }
 
 
-/* #table3 {
-    align-content: center;
-} */
-
 #tablefail {
     position: relative;
     left: 25%;
     width: 50%;
 }
-
-
-/* #result_table {
-    position: relative;
-} */
 
 #levelcomimg {
     height: 200px;
@@ -96,19 +73,6 @@ font {
     height: 200px;
 }
 
-
-/* 
-#bestOut {
-    position: relative;
-    height: 300px;
-    width: 300px;
-    position: relative;
-    left: 45%;
-    width: 50%;
-    bottom: 500px;
-    align-self: center;
-    align-items: center;
-} */
 
 #hearts {
     vertical-align: 0px;
@@ -158,23 +122,6 @@ img {
     height: 200px;
     width: 200px;
 }
-
-
-/* #exit {
-    position: relative;
-    bottom: 550px;
-}
-
-#GameMap {
-    position: relative;
-    bottom: 625px;
-}
-
-#achive {
-    position: relative;
-    top: 30%;
-    right: 90%;
-} */
 
 #points {
     text-align: right;
