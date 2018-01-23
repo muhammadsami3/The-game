@@ -1,6 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=0.1;//timer
+var minutes=20;//timer
 var timePadge = true;
 var timePadgeMargin;
 
@@ -178,7 +178,11 @@ function ch_img(obj, src, index,activeImg) {
                                 {
                                     clearInterval(intervalHandle);
                                     document.getElementById("tableImg").setAttribute('style', "display:none");
-                                    document.getElementById("tryagain").setAttribute('style', "display:all");
+                                    var fail = document.getElementsByClassName('fail')
+                                    for (var i = 0; i < fail.length; i++) {
+                                        fail[i].setAttribute('style', "display:block");
+                                    }
+
                                 }
 
                             }
@@ -269,7 +273,11 @@ var timePadgeMargin = 0.5 * secondsRemaining;
         // stop if down to zero
         if (secondsRemaining === 0) { /// checking
             document.getElementById("tableImg").setAttribute('style',"display:none");
-            document.getElementById("tryagain").setAttribute('style',"display:all");
+            var fail = document.getElementsByClassName('fail')
+            for (var i = 0; i < fail.length; i++) {
+                fail[i].setAttribute('style', "display:block");
+            }
+
             clearInterval(intervalHandle);
         }
         if (secondsRemaining < timePadgeMargin)
