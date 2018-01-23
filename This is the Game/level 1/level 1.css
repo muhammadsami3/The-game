@@ -12,15 +12,7 @@ font {
 }
 
 
-
 /* level points */
-
-#top {
-    bottom: 0px;
-    height: 5%;
-    width: 100%;
-    left: 0%;
-}
 
 #div2 {
     width: 100%;
@@ -32,48 +24,28 @@ font {
     width: 100%;
 }
 
-#table2 {
-    align-content: center;
+#buttons {
+    width: 100%
 }
 
 #tableImg {
     position: relative;
     left: 25%;
     width: 50%;
-    align-self: center;
 }
 
-#result_table {
-    position: relative;
-}
-
-#levelcomimg {
-    height: 200px;
-    width: 300px;
-    position: relative;
-    left: 50%;
-    width: 50%;
-    
-    align-self: center;
-    align-items: center;
-}
-
-.score {
+#tablefail {
     position: relative;
     left: 25%;
     width: 50%;
-    align-self: center;
-    align-items: center;
 }
 
+
 #levelcomimg {
-    height: 300px;
-    width: 1000px;
+    height: 220px;
     position: relative;
     left: 25%;
     width: 50%;
-    align-self: center;
-    align-items: center;
 }
 
 #img_comp {
@@ -88,26 +60,8 @@ font {
 
 #scoreOut {
     position: relative;
-    height: 300px;
-    width: 300px;
-    position: relative;
-    left: 45%;
-    width: 50%;
-    bottom: 250px;
-    align-self: center;
-    align-items: center;
-}
-
-#bestOut {
-    position: relative;
-    height: 300px;
-    width: 300px;
-    position: relative;
-    left: 45%;
-    width: 50%;
-    bottom: 500px;
-    align-self: center;
-    align-items: center;
+    left: 43%;
+    height: 200px;
 }
 
 #hearts {
@@ -159,18 +113,6 @@ img {
     width: 200px;
 }
 
-#exit {
-    position: relative;
-    top: 25%;
-    right: 90%;
-}
-
-#achive {
-    position: relative;
-    top: 30%;
-    right: 90%;
-}
-
 #points {
     text-align: right;
 }
@@ -185,39 +127,58 @@ img {
 }
 
 .result {
-    bottom: 150px;
     display: none;
-}
-
-.tryagain {
-    position: relative;
-    left: 43%;
 }
 
 #tryagain {
-    display: none;
     width: 200px;
     height: 200px;
 }
 
-.tryagain2 {
-    position: relative;
-    right: 10%;
-    width: 0px;
-    height: 150px;
-}
-
 #tryagain2 {
-    display: none;
     width: 410px;
     height: 200px;
 }
-
-
 
 html,
 body {
     margin: 0;
     height: 100%;
     overflow: hidden
+}
+
+.container {
+    width: 200px;
+    height: 260px;
+    position: relative;
+    perspective: 800px;
+}
+
+.flip {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.flip img {
+    margin: 0;
+    display: block;
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    backface-visibility: hidden;
+}
+
+.flip .back {
+    transform: rotateY( 180deg);
+}
+
+.flip.active {
+    transform: rotateY( 180deg);
+}
+
+.fail {
+    display: none;
 }
