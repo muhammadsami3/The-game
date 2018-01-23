@@ -1,6 +1,6 @@
 var secondsRemaining;//timer
 var intervalHandle;//imer
-var minutes=0.6;//timer
+var minutes=0.1;//timer
 var timePadge = true;
 var timePadgeMargin;
 
