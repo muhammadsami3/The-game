@@ -6,13 +6,53 @@
    </head>
 
   <body  bgcolor=" pink">
-   <a href='level 1/level1.html'><button id= "1"class="welcome">Level 1</button></a><br>
-   <a href='map.html'> <button id= "2"class="welcome"> Game map</button></a><br>
-   <button id= "3"class="welcome"> Instructions</button><br>
-   <a href='BYE.html'> <button id= "4"class="welcome" > Exit </button></a><br>
+   <a href='level 1/level1.html'><button id= "1"   value="PLAY"  onclick="play()"  class="welcome">Level 1</button></a><br>
+   <a href='map.html'> <button id= "2"  value="PLAY"  onclick="play2()"  class="welcome"> Game Map</button></a><br>
+   <button id= "3"  value="PLAY"  onclick="play3()"  class="welcome"> Instructions</button><br>
+   <a href='BYE.html'> <button id= "4"  value="PLAY"  onclick="play4()"  class="welcome" > Exit </button></a><br>
 
   
 
+   <script>
 
-   </body>
+
+
+    function play()
+    {
+         var audio = document.getElementsByTagId("1");
+         audio.play();
+                   }
+
+                   function play2()
+    {
+         var audio = document.getElementById("2");
+         audio.play2();
+                   }
+
+                   function play3()
+    {
+         var audio = document.getElementById("3");
+         audio.play3();
+                   }
+  
+                   function play4()
+    {
+         var audio = document.getElementById("4");
+         audio.play4();
+
+        
+                   }
+  
+     </script>
+
+<audio id="1" src="newgamebutton.mp3" ></audio>
+<audio id="2" src="newgamebutton.mp3" ></audio>
+<audio id="3" src="newgamebutton.mp3" ></audio>
+<audio id="4" src="exit.wav" ></audio>
+
+<audio  src="menu.mp3" loop="true"  autostart="true" autoplay="true" ></audio>
+
+   
+</body>
+
 </html>
