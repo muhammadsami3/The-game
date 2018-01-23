@@ -1,5 +1,5 @@
 body {
-    background-image: url("bg/(1).png");
+    background-image: url("bg/(3).png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -39,7 +39,6 @@ font {
     left: 25%;
     width: 50%;
 }
-
 
 #levelcomimg {
     height: 220px;
