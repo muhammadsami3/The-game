@@ -13,7 +13,7 @@ var viewed = 0;
 var first_src = "";
 var first_id = "";
 var points = 0;
-var maxscore=15;
+var maxscore = localStorage.getItem("max_points2");
 var heartslost=0;
 var how_many_checked = 0;
 var points_par = document.getElementById("point");
@@ -94,7 +94,7 @@ function ch_img(obj, src, index,activeImg) {
                                     else{points+=3;}
                                     
                                 }
-                                
+                            
                                 points_par.innerText =points;
                                 //local storage
                                 if (localStorage.getItem("max_points2") < points) 
